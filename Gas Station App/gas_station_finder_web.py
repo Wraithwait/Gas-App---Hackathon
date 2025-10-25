@@ -9,6 +9,7 @@ import requests
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import json
+import random
 from typing import List, Dict
 import math
 import os
@@ -20,6 +21,93 @@ from mapbox_integration import MapboxGasStationService
 load_dotenv()
 
 app = Flask(__name__)
+
+# --- Data Generation Logic (from Gas Stations.py) ---
+
+BRAND_PREMIUMS = {
+    "Shell": 0.35, "Arco": -0.10, "Chevron": 0.40, "Valero": 0.10,
+    "Sinclair": 0.05, "76": 0.25, "Mobil": 0.20, "Circle K": 0.0,
+    "Speedway Express": 0.0, "Chevron G & M": 0.40, "Chevron Extra Mile": 0.40,
+    "Speedway": 0.0, "G & M Oil": 0.0, "AM/PM": -0.10, "Costco Gas Station": -0.20,
+    "G & M Food Mart": 0.0, "Gas": 0.0, "AM / PM": -0.10
+}
+
+STATION_DEFINITIONS = [
+    {"brand": "Shell", "street": "2249 Harbor Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6625, "lon": -117.9175},
+    {"brand": "Arco", "street": "2490 Fairview Rd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6844, "lon": -117.9085},
+    {"brand": "Arco", "street": "2602 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6495, "lon": -117.9195},
+    {"brand": "Arco", "street": "3201 Harbor Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6966, "lon": -117.9184},
+    {"brand": "Arco", "street": "2021 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6416, "lon": -117.9130},
+    {"brand": "Chevron", "street": "2160 Harbor Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6599, "lon": -117.9175},
+    {"brand": "Chevron", "street": "3190 Harbor Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6959, "lon": -117.9184},
+    {"brand": "Valero", "street": "2050 Harbor Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6570, "lon": -117.9176},
+    {"brand": "Arco", "street": "3003 Newport Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6616, "lon": -117.9273},
+    {"brand": "Shell", "street": "1201 Baker St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6888, "lon": -117.8926},
+    {"brand": "Sinclair", "street": "2502 Harbor Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6766, "lon": -117.9179},
+    {"brand": "Arco", "street": "300 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6917, "lon": -117.8805},
+    {"brand": "76", "street": "1195 Baker St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6886, "lon": -117.8920},
+    {"brand": "Mobil", "street": "3006 Harbor Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6896, "lon": -117.9183},
+    {"brand": "Circle K", "street": "3006 Harbor Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6896, "lon": -117.9183},
+    {"brand": "Chevron", "street": "3000 Fairview Rd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6946, "lon": -117.9084},
+    {"brand": "Chevron", "street": "1740 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6366, "lon": -117.9090},
+    {"brand": "Gas", "street": "2281 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6457, "lon": -117.9158},
+    {"brand": "Shell", "street": "1512 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6784, "lon": -117.8888},
+    {"brand": "76", "street": "1900 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6393, "lon": -117.9116},
+    {"brand": "Speedway Express", "street": "799 W 19th St", "city": "Costa Mesa", "zip": "92627", "lat": 33.6517, "lon": -117.9290},
+    {"brand": "Chevron G & M", "street": "3048 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6931, "lon": -117.8829},
+    {"brand": "Chevron", "street": "2995 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6932, "lon": -117.8814},
+    {"brand": "Chevron Extra Mile - G & M", "street": "1740 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6366, "lon": -117.9090},
+    {"brand": "Chevron Extra Mile", "street": "195 E 17th St", "city": "Costa Mesa", "zip": "92627", "lat": 33.6415, "lon": -117.9077},
+    {"brand": "Mobil", "street": "3470 Fairview Rd", "city": "Costa Mesa", "zip": "92626", "lat": 33.7042, "lon": -117.9086},
+    {"brand": "Speedway", "street": "751 Baker St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6874, "lon": -117.8860},
+    {"brand": "Arco", "street": "2100 SE Bristol St", "city": "Newport Beach", "zip": "92660", "lat": 33.6706, "lon": -117.8719},
+    {"brand": "G & M Oil", "street": "3067 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6945, "lon": -117.8839},
+    {"brand": "76", "street": "393 E 17th St", "city": "Costa Mesa", "zip": "92627", "lat": 33.6433, "lon": -117.9050},
+    {"brand": "AM/PM", "street": "2602 Newport Blvd", "city": "Costa Mesa", "zip": "92627", "lat": 33.6495, "lon": -117.9195},
+    {"brand": "Arco", "street": "3414 S Main St", "city": "Santa Ana", "zip": "92707", "lat": 33.7011, "lon": -117.8717},
+    {"brand": "Costco Gas Station", "street": "17900 Newhope St", "city": "Fountain Valley", "zip": "92708", "lat": 33.7145, "lon": -117.9351},
+    {"brand": "Chevron", "street": "2121 SE Bristol St", "city": "Newport Beach", "zip": "92660", "lat": 33.6713, "lon": -117.8726},
+    {"brand": "Shell", "street": "3820 S Fairview St", "city": "Santa Ana", "zip": "92704", "lat": 33.7032, "lon": -117.8961},
+    {"brand": "Chevron", "street": "3801 S Bristol St", "city": "Santa Ana", "zip": "92704", "lat": 33.7045, "lon": -117.8806},
+    {"brand": "Chevron", "street": "1550 Jamboree Rd", "city": "Newport Beach", "zip": "92660", "lat": 33.6414, "lon": -117.8687},
+    {"brand": "G & M Food Mart", "street": "790 W 19th St", "city": "Costa Mesa", "zip": "92627", "lat": 33.6511, "lon": -117.9287},
+    {"brand": "Chevron", "street": "3301 S Bristol St", "city": "Santa Ana", "zip": "92704", "lat": 33.7088, "lon": -117.8814},
+    {"brand": "Chevron", "street": "301 East Coast Hwy", "city": "Newport Beach", "zip": "92660", "lat": 33.6120, "lon": -117.8986},
+    {"brand": "AM / PM", "street": "300 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6917, "lon": -117.8805},
+    {"brand": "G & M Food Mart", "street": "3067 Bristol St", "city": "Costa Mesa", "zip": "92626", "lat": 33.6945, "lon": -117.8839},
+    {"brand": "AM / PM", "street": "3003 Newport Blvd", "city": "Costa Mesa", "zip": "92626", "lat": 33.6616, "lon": -117.9273},
+]
+
+def generate_station_data():
+    stations_output = {}
+    area_base_price = random.uniform(4.80, 5.10)
+    for i, station_def in enumerate(STATION_DEFINITIONS):
+        station_id = f"OC-{i+1:02d}"
+        brand = station_def['brand']
+        premium = BRAND_PREMIUMS.get(brand, 0.0)
+        station_randomness = random.uniform(-0.05, 0.05)
+        price_reg = round(area_base_price + premium + station_randomness, 2)
+        price_mid = round(price_reg + 0.20, 2)
+        price_prem = round(price_reg + 0.40, 2)
+        station_data = {
+            "station_id": station_id, "brand_name": brand,
+            "address": {"street": station_def['street'], "city": station_def['city'], "state": "CA", "zip_code": station_def['zip']},
+            "location": {"latitude": station_def['lat'], "longitude": station_def['lon']},
+            "prices": {
+                "regular": price_reg, "midgrade": price_mid, "premium": price_prem,
+                "diesel": round(price_reg + 0.60, 2) if random.random() < 0.7 else None,
+                "e85": round(price_reg - 0.50, 2) if random.random() < 0.25 else None
+            },
+            "last_updated": f"2025-10-24T{random.randint(0, 23):02}:{random.randint(0, 59):02}:{random.randint(0, 59):02}Z"
+        }
+        stations_output[station_id] = station_data
+    return stations_output
+
+def save_as_json(stations_dict, filename):
+    with open(filename, 'w') as f:
+        json.dump(stations_dict, f, indent=2)
+
+# --- End of Data Generation Logic ---
 
 class GasStationFinderWeb:
     def __init__(self):
@@ -33,70 +121,58 @@ class GasStationFinderWeb:
             self.use_real_data = False
             print("⚠️  MAPBOX_ACCESS_TOKEN not set. Using mock data.")
         
-        # Fallback to mock data if Mapbox API is not available
-        self.gas_stations = self.load_mock_data()
+        # Load station data from JSON file, which is the primary source of truth
+        self.gas_stations = self.load_stations_from_json('stations.json')
+        if not self.gas_stations:
+            print("⚠️ Could not load station data from stations.json. The app may not function correctly.")
+        
+        # Dynamically get a unique list of brands from the loaded stations
+        self.available_brands = sorted(list(set(s['brand'] for s in self.gas_stations if s.get('brand'))))
     
-    def load_mock_data(self) -> List[Dict]:
-        """Load mock gas station data for prototype"""
+    def load_stations_from_json(self, filepath: str) -> List[Dict]:
+        """Load gas station data from a JSON file."""
         # ========================================
         # HOOK: GAS PRICING INFORMATION SOURCE
         # ========================================
-        # This is where gas station data and pricing information is loaded
-        # Current structure: name, brand, lat, lon, prices (E85, 87, 89, 91)
-        # Integration point: Replace with real API calls to gas station databases
-        # Data sources could include: GasBuddy API, AAA Fuel Finder, Google Places API
-        
-        return [
-            {
-                "name": "Shell Station #1234",
-                "brand": "Shell",
-                "lat": 40.7128,
-                "lon": -74.0060,
-                "prices": {"E85": 2.89, "87": 3.45, "89": 3.65, "91": 3.85}
-            },
-            {
-                "name": "Exxon Station #5678",
-                "brand": "Exxon",
-                "lat": 40.7589,
-                "lon": -73.9851,
-                "prices": {"E85": 2.95, "87": 3.52, "89": 3.72, "91": 3.92}
-            },
-            {
-                "name": "BP Station #9012",
-                "brand": "BP",
-                "lat": 40.7505,
-                "lon": -73.9934,
-                "prices": {"E85": 2.82, "87": 3.38, "89": 3.58, "91": 3.78}
-            },
-            {
-                "name": "Chevron Station #3456",
-                "brand": "Chevron",
-                "lat": 40.7614,
-                "lon": -73.9776,
-                "prices": {"E85": 2.91, "87": 3.48, "89": 3.68, "91": 3.88}
-            },
-            {
-                "name": "Mobil Station #7890",
-                "brand": "Mobil",
-                "lat": 40.7505,
-                "lon": -73.9934,
-                "prices": {"E85": 2.87, "87": 3.44, "89": 3.64, "91": 3.84}
-            },
-            {
-                "name": "Speedway Station #2468",
-                "brand": "Speedway",
-                "lat": 40.7282,
-                "lon": -73.9942,
-                "prices": {"E85": 2.79, "87": 3.35, "89": 3.55, "91": 3.75}
-            },
-            {
-                "name": "7-Eleven Station #1357",
-                "brand": "7-Eleven",
-                "lat": 40.7505,
-                "lon": -73.9934,
-                "prices": {"E85": 2.85, "87": 3.41, "89": 3.61, "91": 3.81}
-            }
-        ]
+        # This is where gas station data and pricing information is loaded.
+        # On every startup, it regenerates stations.json for fresh data.
+        try:
+            # Always generate a new, updated stations.json on startup
+            print("🔄 Generating updated station data...")
+            station_data_dict = generate_station_data()
+            save_as_json(station_data_dict, filepath)
+            print(f"✅ Successfully generated '{filepath}' with updated prices.")
+
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            stations_list = []
+            for station_id, station_data in data.items():
+                # Map fuel types from JSON to application's expected keys
+                prices = station_data.get("prices", {})
+                mapped_prices = {
+                    "E85": prices.get("e85"),
+                    "87": prices.get("regular"),
+                    "89": prices.get("midgrade"),
+                    "91": prices.get("premium"),
+                    "diesel": prices.get("diesel")
+                }
+
+                # Construct full address string
+                addr = station_data.get("address", {})
+                full_address = f"{addr.get('street', '')}, {addr.get('city', '')}, {addr.get('state', '')} {addr.get('zip_code', '')}"
+
+                stations_list.append({
+                    "name": f"{station_data.get('brand_name', 'Unknown')} ({station_id})",
+                    "brand": station_data.get("brand_name"),
+                    "lat": station_data.get("location", {}).get("latitude"),
+                    "lon": station_data.get("location", {}).get("longitude"),
+                    "address": full_address,
+                    "prices": {k: v for k, v in mapped_prices.items() if v is not None}
+                })
+            return stations_list
+        except (IOError, json.JSONDecodeError, Exception) as e:
+            print(f"❌ An unexpected error occurred while loading {filepath}: {e}")
+            return []
     
     def get_user_location(self, address: str) -> tuple:
         """Get user's coordinates from address input"""
@@ -126,40 +202,53 @@ class GasStationFinderWeb:
         # Input: user coordinates, sort preferences, gas type filter, brand filter
         # Output: List of filtered and sorted gas stations with pricing data
         # Integration point: Add real-time price updates, availability checks
+
+        # Always use the stations loaded from stations.json
+        stations_to_process = self.gas_stations
         
-        # Use Mapbox API if available, otherwise fall back to mock data
-        if self.use_real_data and self.mapbox_service:
-            try:
-                # Search for real gas stations using Mapbox API
-                real_stations = self.mapbox_service.search_poi(user_lat, user_lon, radius=10000, poi_type='gas_station')
-                
-                # Distance is already calculated in Mapbox service
-                # Use real data
-                stations_to_filter = real_stations
-            except Exception as e:
-                print(f"Error fetching real gas stations: {e}")
-                # Fall back to mock data
-                stations_to_filter = self.gas_stations
-        else:
-            # Use mock data
-            stations_to_filter = self.gas_stations
-        
-        # Filter stations
+        # Pre-filter stations by brand before making expensive API calls
         filtered_stations = []
-        for station in stations_to_filter:
-            # Apply brand filter
+        for station in stations_to_process:
             if brand != "all" and station.get("brand", "").lower() != brand.lower():
                 continue
-            
-            # Calculate distance if not already calculated
-            if "distance" not in station:
-                distance = self.calculate_distance(
-                    user_lat, user_lon,
-                    station["lat"], station["lon"]
-                )
-                station["distance"] = round(distance, 2)
-            
             filtered_stations.append(station)
+
+        # Use Mapbox Matrix API for accurate road distances if available
+        if self.use_real_data and self.mapbox_service and filtered_stations:
+            try:
+                # Prepare coordinates for the Matrix API: [user_location, station1, station2, ...]
+                # Mapbox expects (lat, lon)
+                coordinates = [(user_lat, user_lon)] + [(s['lat'], s['lon']) for s in filtered_stations]
+                
+                matrix_data = self.mapbox_service.get_matrix(coordinates)
+                
+                if matrix_data and 'distances' in matrix_data:
+                    # The first list in 'distances' is from our origin (user) to all destinations
+                    road_distances_meters = matrix_data['distances'][0]
+                    
+                    # The API returns distances for all points, including origin to origin (which is 0)
+                    # So we skip the first one.
+                    for i, station in enumerate(filtered_stations):
+                        distance_meters = road_distances_meters[i + 1]
+                        if distance_meters is not None:
+                            # Convert meters to miles
+                            distance_miles = distance_meters / 1609.34
+                            station['distance'] = round(distance_miles, 2)
+                        else:
+                            # If a route is not found, mark it as very far away
+                            station['distance'] = float('inf')
+            except Exception as e:
+                print(f"❌ Error using Mapbox Matrix API, falling back to straight-line distance. Error: {e}")
+                # Fallback to straight-line distance on API error
+                for station in filtered_stations:
+                    distance = self.calculate_distance(user_lat, user_lon, station["lat"], station["lon"])
+                    station["distance"] = round(distance, 2)
+        else:
+            # Fallback for when Mapbox is not configured or no stations are found
+            for station in filtered_stations:
+                distance = self.calculate_distance(
+                    user_lat, user_lon, station["lat"], station["lon"])
+                station["distance"] = round(distance, 2)
         
         # Sort based on criteria
         if sort_by == "closest":
@@ -184,7 +273,10 @@ finder = GasStationFinderWeb()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # Pass the list of available brands to the template
+    return render_template('index.html', 
+                           mapbox_token=finder.mapbox_access_token, 
+                           brands=finder.available_brands)
 
 @app.route('/geocode', methods=['POST'])
 def geocode():

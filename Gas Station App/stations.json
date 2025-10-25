@@ -1,6 +1,6 @@
 {
-  "OC-001": {
-    "station_id": "OC-001",
+  "OC-01": {
+    "station_id": "OC-01",
     "brand_name": "Shell",
     "address": {
       "street": "2249 Harbor Blvd",
@@ -13,16 +13,16 @@
       "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.34,
-      "midgrade": 5.54,
-      "premium": 5.74,
-      "diesel": 5.94,
+      "regular": 5.25,
+      "midgrade": 5.45,
+      "premium": 5.65,
+      "diesel": 5.85,
       "e85": null
     },
-    "last_updated": "2025-10-24T18:05:57Z"
+    "last_updated": "2025-10-24T05:51:55Z"
   },
-  "OC-002": {
-    "station_id": "OC-002",
+  "OC-02": {
+    "station_id": "OC-02",
     "brand_name": "Arco",
     "address": {
       "street": "2490 Fairview Rd",
@@ -35,16 +35,16 @@
       "longitude": -117.9085
     },
     "prices": {
-      "regular": 4.82,
-      "midgrade": 5.02,
-      "premium": 5.22,
-      "diesel": 5.42,
+      "regular": 4.84,
+      "midgrade": 5.04,
+      "premium": 5.24,
+      "diesel": 5.44,
       "e85": null
     },
-    "last_updated": "2025-10-24T02:40:14Z"
+    "last_updated": "2025-10-24T16:02:15Z"
   },
-  "OC-003": {
-    "station_id": "OC-003",
+  "OC-03": {
+    "station_id": "OC-03",
     "brand_name": "Arco",
     "address": {
       "street": "2602 Newport Blvd",
@@ -57,16 +57,16 @@
       "longitude": -117.9195
     },
     "prices": {
-      "regular": 4.89,
-      "midgrade": 5.09,
-      "premium": 5.29,
-      "diesel": 5.49,
-      "e85": null
+      "regular": 4.79,
+      "midgrade": 4.99,
+      "premium": 5.19,
+      "diesel": null,
+      "e85": 4.29
     },
-    "last_updated": "2025-10-24T22:24:43Z"
+    "last_updated": "2025-10-24T21:59:58Z"
   },
-  "OC-004": {
-    "station_id": "OC-004",
+  "OC-04": {
+    "station_id": "OC-04",
     "brand_name": "Arco",
     "address": {
       "street": "3201 Harbor Blvd",
@@ -79,16 +79,16 @@
       "longitude": -117.9184
     },
     "prices": {
-      "regular": 4.89,
-      "midgrade": 5.09,
-      "premium": 5.29,
-      "diesel": null,
-      "e85": 4.39
+      "regular": 4.79,
+      "midgrade": 4.99,
+      "premium": 5.19,
+      "diesel": 5.39,
+      "e85": null
     },
-    "last_updated": "2025-10-24T03:11:15Z"
+    "last_updated": "2025-10-24T11:05:25Z"
   },
-  "OC-005": {
-    "station_id": "OC-005",
+  "OC-05": {
+    "station_id": "OC-05",
     "brand_name": "Arco",
     "address": {
       "street": "2021 Newport Blvd",
@@ -101,16 +101,16 @@
       "longitude": -117.913
     },
     "prices": {
-      "regular": 4.8,
-      "midgrade": 5.0,
-      "premium": 5.2,
-      "diesel": 5.4,
-      "e85": null
+      "regular": 4.81,
+      "midgrade": 5.01,
+      "premium": 5.21,
+      "diesel": 5.41,
+      "e85": 4.31
     },
-    "last_updated": "2025-10-24T07:03:12Z"
+    "last_updated": "2025-10-24T10:57:54Z"
   },
-  "OC-006": {
-    "station_id": "OC-006",
+  "OC-06": {
+    "station_id": "OC-06",
     "brand_name": "Chevron",
     "address": {
       "street": "2160 Harbor Blvd",
@@ -123,16 +123,16 @@
       "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.31,
-      "midgrade": 5.51,
-      "premium": 5.71,
-      "diesel": null,
+      "regular": 5.33,
+      "midgrade": 5.53,
+      "premium": 5.73,
+      "diesel": 5.93,
       "e85": null
     },
-    "last_updated": "2025-10-24T17:47:49Z"
+    "last_updated": "2025-10-24T09:05:36Z"
   },
-  "OC-007": {
-    "station_id": "OC-007",
+  "OC-07": {
+    "station_id": "OC-07",
     "brand_name": "Chevron",
     "address": {
       "street": "3190 Harbor Blvd",
@@ -145,16 +145,16 @@
       "longitude": -117.9184
     },
     "prices": {
-      "regular": 5.39,
-      "midgrade": 5.59,
-      "premium": 5.79,
+      "regular": 5.37,
+      "midgrade": 5.57,
+      "premium": 5.77,
       "diesel": null,
-      "e85": 4.89
+      "e85": 4.87
     },
-    "last_updated": "2025-10-24T12:31:55Z"
+    "last_updated": "2025-10-24T07:48:56Z"
   },
-  "OC-008": {
-    "station_id": "OC-008",
+  "OC-08": {
+    "station_id": "OC-08",
     "brand_name": "Valero",
     "address": {
       "street": "2050 Harbor Blvd",
@@ -167,16 +167,16 @@
       "longitude": -117.9176
     },
     "prices": {
-      "regular": 5.08,
-      "midgrade": 5.28,
-      "premium": 5.48,
-      "diesel": 5.68,
-      "e85": null
+      "regular": 5.01,
+      "midgrade": 5.21,
+      "premium": 5.41,
+      "diesel": null,
+      "e85": 4.51
     },
-    "last_updated": "2025-10-24T11:23:45Z"
+    "last_updated": "2025-10-24T10:24:44Z"
   },
-  "OC-009": {
-    "station_id": "OC-009",
+  "OC-09": {
+    "station_id": "OC-09",
     "brand_name": "Arco",
     "address": {
       "street": "3003 Newport Blvd",
@@ -189,16 +189,16 @@
       "longitude": -117.9273
     },
     "prices": {
-      "regular": 4.84,
-      "midgrade": 5.04,
-      "premium": 5.24,
-      "diesel": 5.44,
+      "regular": 4.78,
+      "midgrade": 4.98,
+      "premium": 5.18,
+      "diesel": 5.38,
       "e85": null
     },
-    "last_updated": "2025-10-24T11:52:38Z"
+    "last_updated": "2025-10-24T16:16:51Z"
   },
-  "OC-010": {
-    "station_id": "OC-010",
+  "OC-10": {
+    "station_id": "OC-10",
     "brand_name": "Shell",
     "address": {
       "street": "1201 Baker St",
@@ -211,16 +211,16 @@
       "longitude": -117.8926
     },
     "prices": {
-      "regular": 5.33,
-      "midgrade": 5.53,
-      "premium": 5.73,
+      "regular": 5.22,
+      "midgrade": 5.42,
+      "premium": 5.62,
       "diesel": null,
-      "e85": null
+      "e85": 4.72
     },
-    "last_updated": "2025-10-24T12:21:54Z"
+    "last_updated": "2025-10-24T08:08:27Z"
   },
-  "OC-011": {
-    "station_id": "OC-011",
+  "OC-11": {
+    "station_id": "OC-11",
     "brand_name": "Sinclair",
     "address": {
       "street": "2502 Harbor Blvd",
@@ -233,16 +233,16 @@
       "longitude": -117.9179
     },
     "prices": {
-      "regular": 5.02,
-      "midgrade": 5.22,
-      "premium": 5.42,
-      "diesel": 5.62,
-      "e85": null
+      "regular": 4.93,
+      "midgrade": 5.13,
+      "premium": 5.33,
+      "diesel": null,
+      "e85": 4.43
     },
-    "last_updated": "2025-10-24T07:18:08Z"
+    "last_updated": "2025-10-24T16:37:51Z"
   },
-  "OC-012": {
-    "station_id": "OC-012",
+  "OC-12": {
+    "station_id": "OC-12",
     "brand_name": "Arco",
     "address": {
       "street": "300 Bristol St",
@@ -255,16 +255,16 @@
       "longitude": -117.8805
     },
     "prices": {
-      "regular": 4.83,
-      "midgrade": 5.03,
-      "premium": 5.23,
-      "diesel": null,
+      "regular": 4.86,
+      "midgrade": 5.06,
+      "premium": 5.26,
+      "diesel": 5.46,
       "e85": null
     },
-    "last_updated": "2025-10-24T11:56:42Z"
+    "last_updated": "2025-10-24T23:18:06Z"
   },
-  "OC-013": {
-    "station_id": "OC-013",
+  "OC-13": {
+    "station_id": "OC-13",
     "brand_name": "76",
     "address": {
       "street": "1195 Baker St",
@@ -277,16 +277,16 @@
       "longitude": -117.892
     },
     "prices": {
-      "regular": 5.16,
-      "midgrade": 5.36,
-      "premium": 5.56,
-      "diesel": 5.76,
-      "e85": 4.66
+      "regular": 5.18,
+      "midgrade": 5.38,
+      "premium": 5.58,
+      "diesel": 5.78,
+      "e85": null
     },
-    "last_updated": "2025-10-24T00:50:03Z"
+    "last_updated": "2025-10-24T18:28:10Z"
   },
-  "OC-014": {
-    "station_id": "OC-014",
+  "OC-14": {
+    "station_id": "OC-14",
     "brand_name": "Mobil",
     "address": {
       "street": "3006 Harbor Blvd",
@@ -299,16 +299,16 @@
       "longitude": -117.9183
     },
     "prices": {
-      "regular": 5.19,
-      "midgrade": 5.39,
-      "premium": 5.59,
-      "diesel": 5.79,
-      "e85": null
+      "regular": 5.1,
+      "midgrade": 5.3,
+      "premium": 5.5,
+      "diesel": 5.7,
+      "e85": 4.6
     },
-    "last_updated": "2025-10-24T01:50:54Z"
+    "last_updated": "2025-10-24T06:52:19Z"
   },
-  "OC-015": {
-    "station_id": "OC-015",
+  "OC-15": {
+    "station_id": "OC-15",
     "brand_name": "Circle K",
     "address": {
       "street": "3006 Harbor Blvd",
@@ -321,16 +321,16 @@
       "longitude": -117.9183
     },
     "prices": {
-      "regular": 4.95,
-      "midgrade": 5.15,
-      "premium": 5.35,
-      "diesel": 5.55,
-      "e85": null
+      "regular": 4.94,
+      "midgrade": 5.14,
+      "premium": 5.34,
+      "diesel": 5.54,
+      "e85": 4.44
     },
-    "last_updated": "2025-10-24T19:32:33Z"
+    "last_updated": "2025-10-24T15:12:08Z"
   },
-  "OC-016": {
-    "station_id": "OC-016",
+  "OC-16": {
+    "station_id": "OC-16",
     "brand_name": "Chevron",
     "address": {
       "street": "3000 Fairview Rd",
@@ -343,16 +343,16 @@
       "longitude": -117.9084
     },
     "prices": {
-      "regular": 5.31,
-      "midgrade": 5.51,
-      "premium": 5.71,
-      "diesel": 5.91,
+      "regular": 5.36,
+      "midgrade": 5.56,
+      "premium": 5.76,
+      "diesel": 5.96,
       "e85": null
     },
-    "last_updated": "2025-10-24T02:20:47Z"
+    "last_updated": "2025-10-24T02:40:11Z"
   },
-  "OC-017": {
-    "station_id": "OC-017",
+  "OC-17": {
+    "station_id": "OC-17",
     "brand_name": "Chevron",
     "address": {
       "street": "1740 Newport Blvd",
@@ -365,16 +365,16 @@
       "longitude": -117.909
     },
     "prices": {
-      "regular": 5.31,
-      "midgrade": 5.51,
-      "premium": 5.71,
-      "diesel": 5.91,
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
       "e85": null
     },
-    "last_updated": "2025-10-24T12:31:10Z"
+    "last_updated": "2025-10-24T17:47:30Z"
   },
-  "OC-018": {
-    "station_id": "OC-018",
+  "OC-18": {
+    "station_id": "OC-18",
     "brand_name": "Gas",
     "address": {
       "street": "2281 Newport Blvd",
@@ -387,16 +387,16 @@
       "longitude": -117.9158
     },
     "prices": {
-      "regular": 4.94,
-      "midgrade": 5.14,
-      "premium": 5.34,
-      "diesel": 5.54,
+      "regular": 4.93,
+      "midgrade": 5.13,
+      "premium": 5.33,
+      "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T07:47:02Z"
+    "last_updated": "2025-10-24T12:52:24Z"
   },
-  "OC-019": {
-    "station_id": "OC-019",
+  "OC-19": {
+    "station_id": "OC-19",
     "brand_name": "Shell",
     "address": {
       "street": "1512 Bristol St",
@@ -409,16 +409,16 @@
       "longitude": -117.8888
     },
     "prices": {
-      "regular": 5.34,
-      "midgrade": 5.54,
-      "premium": 5.74,
-      "diesel": 5.94,
-      "e85": 4.84
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
+      "e85": null
     },
-    "last_updated": "2025-10-24T03:14:57Z"
+    "last_updated": "2025-10-24T23:04:13Z"
   },
-  "OC-020": {
-    "station_id": "OC-020",
+  "OC-20": {
+    "station_id": "OC-20",
     "brand_name": "76",
     "address": {
       "street": "1900 Newport Blvd",
@@ -431,16 +431,16 @@
       "longitude": -117.9116
     },
     "prices": {
-      "regular": 5.19,
-      "midgrade": 5.39,
-      "premium": 5.59,
+      "regular": 5.17,
+      "midgrade": 5.37,
+      "premium": 5.57,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T21:17:48Z"
+    "last_updated": "2025-10-24T06:21:45Z"
   },
-  "OC-021": {
-    "station_id": "OC-021",
+  "OC-21": {
+    "station_id": "OC-21",
     "brand_name": "Speedway Express",
     "address": {
       "street": "799 W 19th St",
@@ -453,16 +453,16 @@
       "longitude": -117.929
     },
     "prices": {
-      "regular": 4.96,
-      "midgrade": 5.16,
-      "premium": 5.36,
-      "diesel": 5.56,
+      "regular": 4.97,
+      "midgrade": 5.17,
+      "premium": 5.37,
+      "diesel": 5.57,
       "e85": null
     },
-    "last_updated": "2025-10-24T04:25:46Z"
+    "last_updated": "2025-10-24T10:03:15Z"
   },
-  "OC-022": {
-    "station_id": "OC-022",
+  "OC-22": {
+    "station_id": "OC-22",
     "brand_name": "Chevron G & M",
     "address": {
       "street": "3048 Bristol St",
@@ -475,16 +475,16 @@
       "longitude": -117.8829
     },
     "prices": {
-      "regular": 5.39,
-      "midgrade": 5.59,
-      "premium": 5.79,
-      "diesel": 5.99,
+      "regular": 5.36,
+      "midgrade": 5.56,
+      "premium": 5.76,
+      "diesel": 5.96,
       "e85": null
     },
-    "last_updated": "2025-10-24T05:01:34Z"
+    "last_updated": "2025-10-24T21:32:06Z"
   },
-  "OC-023": {
-    "station_id": "OC-023",
+  "OC-23": {
+    "station_id": "OC-23",
     "brand_name": "Chevron",
     "address": {
       "street": "2995 Bristol St",
@@ -497,16 +497,16 @@
       "longitude": -117.8814
     },
     "prices": {
-      "regular": 5.34,
-      "midgrade": 5.54,
-      "premium": 5.74,
-      "diesel": 5.94,
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
       "e85": null
     },
-    "last_updated": "2025-10-24T11:50:41Z"
+    "last_updated": "2025-10-24T11:38:13Z"
   },
-  "OC-024": {
-    "station_id": "OC-024",
+  "OC-24": {
+    "station_id": "OC-24",
     "brand_name": "Chevron Extra Mile - G & M",
     "address": {
       "street": "1740 Newport Blvd",
@@ -519,16 +519,16 @@
       "longitude": -117.909
     },
     "prices": {
-      "regular": 4.95,
-      "midgrade": 5.15,
-      "premium": 5.35,
-      "diesel": null,
-      "e85": null
+      "regular": 4.97,
+      "midgrade": 5.17,
+      "premium": 5.37,
+      "diesel": 5.57,
+      "e85": 4.47
     },
-    "last_updated": "2025-10-24T19:44:11Z"
+    "last_updated": "2025-10-24T01:07:05Z"
   },
-  "OC-025": {
-    "station_id": "OC-025",
+  "OC-25": {
+    "station_id": "OC-25",
     "brand_name": "Chevron Extra Mile",
     "address": {
       "street": "195 E 17th St",
@@ -541,16 +541,16 @@
       "longitude": -117.9077
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
+      "regular": 5.36,
+      "midgrade": 5.56,
+      "premium": 5.76,
+      "diesel": 5.96,
       "e85": null
     },
-    "last_updated": "2025-10-24T10:29:25Z"
+    "last_updated": "2025-10-24T09:54:46Z"
   },
-  "OC-026": {
-    "station_id": "OC-026",
+  "OC-26": {
+    "station_id": "OC-26",
     "brand_name": "Mobil",
     "address": {
       "street": "3470 Fairview Rd",
@@ -563,16 +563,16 @@
       "longitude": -117.9086
     },
     "prices": {
-      "regular": 5.18,
-      "midgrade": 5.38,
-      "premium": 5.58,
-      "diesel": null,
-      "e85": 4.68
+      "regular": 5.1,
+      "midgrade": 5.3,
+      "premium": 5.5,
+      "diesel": 5.7,
+      "e85": null
     },
-    "last_updated": "2025-10-24T06:25:21Z"
+    "last_updated": "2025-10-24T08:21:32Z"
   },
-  "OC-027": {
-    "station_id": "OC-027",
+  "OC-27": {
+    "station_id": "OC-27",
     "brand_name": "Speedway",
     "address": {
       "street": "751 Baker St",
@@ -585,16 +585,16 @@
       "longitude": -117.886
     },
     "prices": {
-      "regular": 4.91,
-      "midgrade": 5.11,
-      "premium": 5.31,
-      "diesel": null,
+      "regular": 4.95,
+      "midgrade": 5.15,
+      "premium": 5.35,
+      "diesel": 5.55,
       "e85": null
     },
-    "last_updated": "2025-10-24T11:18:16Z"
+    "last_updated": "2025-10-24T22:03:07Z"
   },
-  "OC-028": {
-    "station_id": "OC-028",
+  "OC-28": {
+    "station_id": "OC-28",
     "brand_name": "Arco",
     "address": {
       "street": "2100 SE Bristol St",
@@ -607,16 +607,16 @@
       "longitude": -117.8719
     },
     "prices": {
-      "regular": 4.89,
-      "midgrade": 5.09,
-      "premium": 5.29,
-      "diesel": 5.49,
+      "regular": 4.83,
+      "midgrade": 5.03,
+      "premium": 5.23,
+      "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T06:43:19Z"
+    "last_updated": "2025-10-24T23:02:51Z"
   },
-  "OC-029": {
-    "station_id": "OC-029",
+  "OC-29": {
+    "station_id": "OC-29",
     "brand_name": "G & M Oil",
     "address": {
       "street": "3067 Bristol St",
@@ -629,16 +629,16 @@
       "longitude": -117.8839
     },
     "prices": {
-      "regular": 4.96,
-      "midgrade": 5.16,
-      "premium": 5.36,
-      "diesel": 5.56,
+      "regular": 4.91,
+      "midgrade": 5.11,
+      "premium": 5.31,
+      "diesel": 5.51,
       "e85": null
     },
-    "last_updated": "2025-10-24T10:42:17Z"
+    "last_updated": "2025-10-24T12:09:08Z"
   },
-  "OC-030": {
-    "station_id": "OC-030",
+  "OC-30": {
+    "station_id": "OC-30",
     "brand_name": "76",
     "address": {
       "street": "393 E 17th St",
@@ -651,16 +651,16 @@
       "longitude": -117.905
     },
     "prices": {
-      "regular": 5.15,
-      "midgrade": 5.35,
-      "premium": 5.55,
-      "diesel": 5.75,
-      "e85": 4.65
+      "regular": 5.17,
+      "midgrade": 5.37,
+      "premium": 5.57,
+      "diesel": 5.77,
+      "e85": null
     },
-    "last_updated": "2025-10-24T13:55:41Z"
+    "last_updated": "2025-10-24T07:36:08Z"
   },
-  "OC-031": {
-    "station_id": "OC-031",
+  "OC-31": {
+    "station_id": "OC-31",
     "brand_name": "AM/PM",
     "address": {
       "street": "2602 Newport Blvd",
@@ -673,16 +673,16 @@
       "longitude": -117.9195
     },
     "prices": {
-      "regular": 4.82,
-      "midgrade": 5.02,
-      "premium": 5.22,
-      "diesel": 5.42,
+      "regular": 4.83,
+      "midgrade": 5.03,
+      "premium": 5.23,
+      "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T22:41:00Z"
+    "last_updated": "2025-10-24T14:44:12Z"
   },
-  "OC-032": {
-    "station_id": "OC-032",
+  "OC-32": {
+    "station_id": "OC-32",
     "brand_name": "Arco",
     "address": {
       "street": "3414 S Main St",
@@ -695,16 +695,16 @@
       "longitude": -117.8717
     },
     "prices": {
-      "regular": 4.85,
-      "midgrade": 5.05,
-      "premium": 5.25,
-      "diesel": 5.45,
-      "e85": null
+      "regular": 4.84,
+      "midgrade": 5.04,
+      "premium": 5.24,
+      "diesel": 5.44,
+      "e85": 4.34
     },
-    "last_updated": "2025-10-24T01:25:40Z"
+    "last_updated": "2025-10-24T13:20:20Z"
   },
-  "OC-033": {
-    "station_id": "OC-033",
+  "OC-33": {
+    "station_id": "OC-33",
     "brand_name": "Costco Gas Station",
     "address": {
       "street": "17900 Newhope St",
@@ -717,16 +717,16 @@
       "longitude": -117.9351
     },
     "prices": {
-      "regular": 4.76,
-      "midgrade": 4.96,
-      "premium": 5.16,
-      "diesel": 5.36,
+      "regular": 4.73,
+      "midgrade": 4.93,
+      "premium": 5.13,
+      "diesel": 5.33,
       "e85": null
     },
-    "last_updated": "2025-10-24T13:56:46Z"
+    "last_updated": "2025-10-24T13:58:40Z"
   },
-  "OC-034": {
-    "station_id": "OC-034",
+  "OC-34": {
+    "station_id": "OC-34",
     "brand_name": "Chevron",
     "address": {
       "street": "2121 SE Bristol St",
@@ -739,16 +739,16 @@
       "longitude": -117.8726
     },
     "prices": {
-      "regular": 5.32,
-      "midgrade": 5.52,
-      "premium": 5.72,
-      "diesel": null,
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
       "e85": null
     },
-    "last_updated": "2025-10-24T03:51:33Z"
+    "last_updated": "2025-10-24T11:42:58Z"
   },
-  "OC-035": {
-    "station_id": "OC-035",
+  "OC-35": {
+    "station_id": "OC-35",
     "brand_name": "Shell",
     "address": {
       "street": "3820 S Fairview St",
@@ -761,16 +761,16 @@
       "longitude": -117.8961
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
-      "e85": null
+      "regular": 5.32,
+      "midgrade": 5.52,
+      "premium": 5.72,
+      "diesel": null,
+      "e85": 4.82
     },
-    "last_updated": "2025-10-24T10:55:21Z"
+    "last_updated": "2025-10-24T13:47:29Z"
   },
-  "OC-036": {
-    "station_id": "OC-036",
+  "OC-36": {
+    "station_id": "OC-36",
     "brand_name": "Chevron",
     "address": {
       "street": "3801 S Bristol St",
@@ -783,16 +783,16 @@
       "longitude": -117.8806
     },
     "prices": {
-      "regular": 5.36,
-      "midgrade": 5.56,
-      "premium": 5.76,
-      "diesel": null,
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
       "e85": null
     },
-    "last_updated": "2025-10-24T09:37:05Z"
+    "last_updated": "2025-10-24T20:30:05Z"
   },
-  "OC-037": {
-    "station_id": "OC-037",
+  "OC-37": {
+    "station_id": "OC-37",
     "brand_name": "Chevron",
     "address": {
       "street": "1550 Jamboree Rd",
@@ -805,16 +805,16 @@
       "longitude": -117.8687
     },
     "prices": {
-      "regular": 5.36,
-      "midgrade": 5.56,
-      "premium": 5.76,
-      "diesel": 5.96,
+      "regular": 5.28,
+      "midgrade": 5.48,
+      "premium": 5.68,
+      "diesel": 5.88,
       "e85": null
     },
-    "last_updated": "2025-10-24T01:57:45Z"
+    "last_updated": "2025-10-24T22:40:13Z"
   },
-  "OC-038": {
-    "station_id": "OC-038",
+  "OC-38": {
+    "station_id": "OC-38",
     "brand_name": "G & M Food Mart",
     "address": {
       "street": "790 W 19th St",
@@ -827,16 +827,16 @@
       "longitude": -117.9287
     },
     "prices": {
-      "regular": 4.91,
-      "midgrade": 5.11,
-      "premium": 5.31,
+      "regular": 4.96,
+      "midgrade": 5.16,
+      "premium": 5.36,
       "diesel": null,
-      "e85": null
+      "e85": 4.46
     },
-    "last_updated": "2025-10-24T00:46:50Z"
+    "last_updated": "2025-10-24T05:10:39Z"
   },
-  "OC-039": {
-    "station_id": "OC-039",
+  "OC-39": {
+    "station_id": "OC-39",
     "brand_name": "Chevron",
     "address": {
       "street": "3301 S Bristol St",
@@ -849,16 +849,16 @@
       "longitude": -117.8814
     },
     "prices": {
-      "regular": 5.38,
-      "midgrade": 5.58,
-      "premium": 5.78,
-      "diesel": 5.98,
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
       "e85": null
     },
-    "last_updated": "2025-10-24T03:22:15Z"
+    "last_updated": "2025-10-24T14:01:04Z"
   },
-  "OC-040": {
-    "station_id": "OC-040",
+  "OC-40": {
+    "station_id": "OC-40",
     "brand_name": "Chevron",
     "address": {
       "street": "301 East Coast Hwy",
@@ -871,16 +871,16 @@
       "longitude": -117.8986
     },
     "prices": {
-      "regular": 5.37,
-      "midgrade": 5.57,
-      "premium": 5.77,
-      "diesel": 5.97,
-      "e85": 4.87
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
+      "e85": null
     },
-    "last_updated": "2025-10-24T19:21:15Z"
+    "last_updated": "2025-10-24T19:39:47Z"
   },
-  "OC-041": {
-    "station_id": "OC-041",
+  "OC-41": {
+    "station_id": "OC-41",
     "brand_name": "AM / PM",
     "address": {
       "street": "300 Bristol St",
@@ -893,16 +893,16 @@
       "longitude": -117.8805
     },
     "prices": {
-      "regular": 5.0,
-      "midgrade": 5.2,
-      "premium": 5.4,
-      "diesel": null,
+      "regular": 4.84,
+      "midgrade": 5.04,
+      "premium": 5.24,
+      "diesel": 5.44,
       "e85": null
     },
-    "last_updated": "2025-10-24T18:09:59Z"
+    "last_updated": "2025-10-24T12:47:42Z"
   },
-  "OC-042": {
-    "station_id": "OC-042",
+  "OC-42": {
+    "station_id": "OC-42",
     "brand_name": "G & M Food Mart",
     "address": {
       "street": "3067 Bristol St",
@@ -915,16 +915,16 @@
       "longitude": -117.8839
     },
     "prices": {
-      "regular": 4.93,
-      "midgrade": 5.13,
-      "premium": 5.33,
-      "diesel": 5.53,
+      "regular": 4.9,
+      "midgrade": 5.1,
+      "premium": 5.3,
+      "diesel": 5.5,
       "e85": null
     },
-    "last_updated": "2025-10-24T16:09:15Z"
+    "last_updated": "2025-10-24T03:26:36Z"
   },
-  "OC-043": {
-    "station_id": "OC-043",
+  "OC-43": {
+    "station_id": "OC-43",
     "brand_name": "AM / PM",
     "address": {
       "street": "3003 Newport Blvd",
@@ -937,12 +937,12 @@
       "longitude": -117.9273
     },
     "prices": {
-      "regular": 5.0,
-      "midgrade": 5.2,
-      "premium": 5.4,
-      "diesel": null,
+      "regular": 4.83,
+      "midgrade": 5.03,
+      "premium": 5.23,
+      "diesel": 5.43,
       "e85": null
     },
-    "last_updated": "2025-10-24T05:03:19Z"
+    "last_updated": "2025-10-24T00:41:33Z"
   }
 }

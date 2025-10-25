@@ -340,13 +340,10 @@
                         <label for="brand">Brand:</label>
                         <select id="brand">
                             <option value="all">All Brands</option>
-                            <option value="Shell">Shell</option>
-                            <option value="Exxon">Exxon</option>
-                            <option value="BP">BP</option>
-                            <option value="Chevron">Chevron</option>
-                            <option value="Mobil">Mobil</option>
-                            <option value="Speedway">Speedway</option>
-                            <option value="7-Eleven">7-Eleven</option>
+                            <!-- Brands will be dynamically inserted here by Flask/Jinja2 -->
+                            {% for brand in brands %}
+                            <option value="{{ brand }}">{{ brand }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     
@@ -374,7 +371,7 @@
     <script>
         let userLocation = null;
         let map = null;
-        let mapboxToken = 'pk.eyJ1Ijoid3JhaXRod2FpdCIsImEiOiJjbWg2cHRiajgwa3N0MmpvbW9mZ2lxeGtqIn0.UXl2DSFjbSSRntzofhFm9g';
+        let mapboxToken = '{{ mapbox_token or "" }}';
         
         // Initialize mapbox
         mapboxgl.accessToken = mapboxToken;

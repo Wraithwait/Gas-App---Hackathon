@@ -92,7 +92,7 @@ def generate_station_data():
     # Loop over the predefined station list
     for i, station_def in enumerate(STATION_DEFINITIONS):
         
-        # Create a zero-padded ID, e.g., OC-001, OC-002...
+        # Create a zero-padded ID, e.g., OC-01, OC-02...
         station_id = f"OC-{i+1:03d}"
         brand = station_def['brand']
         
