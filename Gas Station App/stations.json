@@ -4,8 +4,6 @@
     "brand_name": "Shell",
     "address": {
       "street": "2249 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -13,21 +11,18 @@
       "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.25,
-      "midgrade": 5.45,
-      "premium": 5.65,
-      "diesel": 5.85,
+      "regular": 5.42,
+      "midgrade": 5.62,
+      "premium": 5.82,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T05:51:55Z"
+    }
   },
   "OC-02": {
     "station_id": "OC-02",
     "brand_name": "Arco",
     "address": {
       "street": "2490 Fairview Rd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -35,21 +30,18 @@
       "longitude": -117.9085
     },
     "prices": {
-      "regular": 4.84,
-      "midgrade": 5.04,
-      "premium": 5.24,
-      "diesel": 5.44,
+      "regular": 5.01,
+      "midgrade": 5.21,
+      "premium": 5.41,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T16:02:15Z"
+    }
   },
   "OC-03": {
     "station_id": "OC-03",
     "brand_name": "Arco",
     "address": {
       "street": "2602 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -57,21 +49,18 @@
       "longitude": -117.9195
     },
     "prices": {
-      "regular": 4.79,
-      "midgrade": 4.99,
-      "premium": 5.19,
-      "diesel": null,
-      "e85": 4.29
-    },
-    "last_updated": "2025-10-24T21:59:58Z"
+      "regular": 4.99,
+      "midgrade": 5.19,
+      "premium": 5.39,
+      "diesel": 5.59,
+      "e85": null
+    }
   },
   "OC-04": {
     "station_id": "OC-04",
     "brand_name": "Arco",
     "address": {
       "street": "3201 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -79,21 +68,18 @@
       "longitude": -117.9184
     },
     "prices": {
-      "regular": 4.79,
-      "midgrade": 4.99,
-      "premium": 5.19,
-      "diesel": 5.39,
+      "regular": 4.99,
+      "midgrade": 5.19,
+      "premium": 5.39,
+      "diesel": 5.59,
       "e85": null
-    },
-    "last_updated": "2025-10-24T11:05:25Z"
+    }
   },
   "OC-05": {
     "station_id": "OC-05",
     "brand_name": "Arco",
     "address": {
       "street": "2021 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -101,21 +87,18 @@
       "longitude": -117.913
     },
     "prices": {
-      "regular": 4.81,
-      "midgrade": 5.01,
-      "premium": 5.21,
-      "diesel": 5.41,
-      "e85": 4.31
-    },
-    "last_updated": "2025-10-24T10:57:54Z"
+      "regular": 4.94,
+      "midgrade": 5.14,
+      "premium": 5.34,
+      "diesel": 5.54,
+      "e85": null
+    }
   },
   "OC-06": {
     "station_id": "OC-06",
     "brand_name": "Chevron",
     "address": {
       "street": "2160 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -123,21 +106,18 @@
       "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.33,
-      "midgrade": 5.53,
-      "premium": 5.73,
-      "diesel": 5.93,
+      "regular": 5.48,
+      "midgrade": 5.68,
+      "premium": 5.88,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T09:05:36Z"
+    }
   },
   "OC-07": {
     "station_id": "OC-07",
     "brand_name": "Chevron",
     "address": {
       "street": "3190 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -145,21 +125,18 @@
       "longitude": -117.9184
     },
     "prices": {
-      "regular": 5.37,
-      "midgrade": 5.57,
-      "premium": 5.77,
+      "regular": 5.44,
+      "midgrade": 5.64,
+      "premium": 5.84,
       "diesel": null,
-      "e85": 4.87
-    },
-    "last_updated": "2025-10-24T07:48:56Z"
+      "e85": null
+    }
   },
   "OC-08": {
     "station_id": "OC-08",
     "brand_name": "Valero",
     "address": {
       "street": "2050 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -167,21 +144,18 @@
       "longitude": -117.9176
     },
     "prices": {
-      "regular": 5.01,
-      "midgrade": 5.21,
-      "premium": 5.41,
+      "regular": 5.17,
+      "midgrade": 5.37,
+      "premium": 5.57,
       "diesel": null,
-      "e85": 4.51
-    },
-    "last_updated": "2025-10-24T10:24:44Z"
+      "e85": null
+    }
   },
   "OC-09": {
     "station_id": "OC-09",
     "brand_name": "Arco",
     "address": {
       "street": "3003 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -189,21 +163,18 @@
       "longitude": -117.9273
     },
     "prices": {
-      "regular": 4.78,
-      "midgrade": 4.98,
-      "premium": 5.18,
-      "diesel": 5.38,
+      "regular": 4.92,
+      "midgrade": 5.12,
+      "premium": 5.32,
+      "diesel": 5.52,
       "e85": null
-    },
-    "last_updated": "2025-10-24T16:16:51Z"
+    }
   },
   "OC-10": {
     "station_id": "OC-10",
     "brand_name": "Shell",
     "address": {
       "street": "1201 Baker St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -211,21 +182,18 @@
       "longitude": -117.8926
     },
     "prices": {
-      "regular": 5.22,
-      "midgrade": 5.42,
-      "premium": 5.62,
+      "regular": 5.44,
+      "midgrade": 5.64,
+      "premium": 5.84,
       "diesel": null,
-      "e85": 4.72
-    },
-    "last_updated": "2025-10-24T08:08:27Z"
+      "e85": null
+    }
   },
   "OC-11": {
     "station_id": "OC-11",
     "brand_name": "Sinclair",
     "address": {
       "street": "2502 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -233,21 +201,18 @@
       "longitude": -117.9179
     },
     "prices": {
-      "regular": 4.93,
-      "midgrade": 5.13,
-      "premium": 5.33,
-      "diesel": null,
-      "e85": 4.43
-    },
-    "last_updated": "2025-10-24T16:37:51Z"
+      "regular": 5.07,
+      "midgrade": 5.27,
+      "premium": 5.47,
+      "diesel": 5.67,
+      "e85": 4.57
+    }
   },
   "OC-12": {
     "station_id": "OC-12",
     "brand_name": "Arco",
     "address": {
       "street": "300 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -255,21 +220,18 @@
       "longitude": -117.8805
     },
     "prices": {
-      "regular": 4.86,
-      "midgrade": 5.06,
-      "premium": 5.26,
-      "diesel": 5.46,
+      "regular": 4.94,
+      "midgrade": 5.14,
+      "premium": 5.34,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T23:18:06Z"
+    }
   },
   "OC-13": {
     "station_id": "OC-13",
     "brand_name": "76",
     "address": {
       "street": "1195 Baker St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -277,21 +239,18 @@
       "longitude": -117.892
     },
     "prices": {
-      "regular": 5.18,
-      "midgrade": 5.38,
-      "premium": 5.58,
-      "diesel": 5.78,
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
       "e85": null
-    },
-    "last_updated": "2025-10-24T18:28:10Z"
+    }
   },
   "OC-14": {
     "station_id": "OC-14",
     "brand_name": "Mobil",
     "address": {
       "street": "3006 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -299,21 +258,18 @@
       "longitude": -117.9183
     },
     "prices": {
-      "regular": 5.1,
-      "midgrade": 5.3,
-      "premium": 5.5,
-      "diesel": 5.7,
-      "e85": 4.6
-    },
-    "last_updated": "2025-10-24T06:52:19Z"
+      "regular": 5.31,
+      "midgrade": 5.51,
+      "premium": 5.71,
+      "diesel": 5.91,
+      "e85": 4.81
+    }
   },
   "OC-15": {
     "station_id": "OC-15",
     "brand_name": "Circle K",
     "address": {
       "street": "3006 Harbor Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -321,21 +277,18 @@
       "longitude": -117.9183
     },
     "prices": {
-      "regular": 4.94,
-      "midgrade": 5.14,
-      "premium": 5.34,
-      "diesel": 5.54,
-      "e85": 4.44
-    },
-    "last_updated": "2025-10-24T15:12:08Z"
+      "regular": 5.06,
+      "midgrade": 5.26,
+      "premium": 5.46,
+      "diesel": null,
+      "e85": null
+    }
   },
   "OC-16": {
     "station_id": "OC-16",
     "brand_name": "Chevron",
     "address": {
       "street": "3000 Fairview Rd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -343,21 +296,18 @@
       "longitude": -117.9084
     },
     "prices": {
-      "regular": 5.36,
-      "midgrade": 5.56,
-      "premium": 5.76,
-      "diesel": 5.96,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T02:40:11Z"
+      "regular": 5.47,
+      "midgrade": 5.67,
+      "premium": 5.87,
+      "diesel": 6.07,
+      "e85": 4.97
+    }
   },
   "OC-17": {
     "station_id": "OC-17",
     "brand_name": "Chevron",
     "address": {
       "street": "1740 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -365,21 +315,18 @@
       "longitude": -117.909
     },
     "prices": {
-      "regular": 5.34,
-      "midgrade": 5.54,
-      "premium": 5.74,
-      "diesel": 5.94,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T17:47:30Z"
+      "regular": 5.49,
+      "midgrade": 5.69,
+      "premium": 5.89,
+      "diesel": null,
+      "e85": 4.99
+    }
   },
   "OC-18": {
     "station_id": "OC-18",
     "brand_name": "Gas",
     "address": {
       "street": "2281 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -387,21 +334,18 @@
       "longitude": -117.9158
     },
     "prices": {
-      "regular": 4.93,
-      "midgrade": 5.13,
-      "premium": 5.33,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T12:52:24Z"
+      "regular": 5.08,
+      "midgrade": 5.28,
+      "premium": 5.48,
+      "diesel": 5.68,
+      "e85": 4.58
+    }
   },
   "OC-19": {
     "station_id": "OC-19",
     "brand_name": "Shell",
     "address": {
       "street": "1512 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -409,21 +353,18 @@
       "longitude": -117.8888
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T23:04:13Z"
+      "regular": 5.45,
+      "midgrade": 5.65,
+      "premium": 5.85,
+      "diesel": 6.05,
+      "e85": 4.95
+    }
   },
   "OC-20": {
     "station_id": "OC-20",
     "brand_name": "76",
     "address": {
       "street": "1900 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -431,21 +372,18 @@
       "longitude": -117.9116
     },
     "prices": {
-      "regular": 5.17,
-      "midgrade": 5.37,
-      "premium": 5.57,
-      "diesel": null,
+      "regular": 5.27,
+      "midgrade": 5.47,
+      "premium": 5.67,
+      "diesel": 5.87,
       "e85": null
-    },
-    "last_updated": "2025-10-24T06:21:45Z"
+    }
   },
   "OC-21": {
     "station_id": "OC-21",
     "brand_name": "Speedway Express",
     "address": {
       "street": "799 W 19th St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -453,21 +391,18 @@
       "longitude": -117.929
     },
     "prices": {
-      "regular": 4.97,
-      "midgrade": 5.17,
-      "premium": 5.37,
-      "diesel": 5.57,
+      "regular": 5.07,
+      "midgrade": 5.27,
+      "premium": 5.47,
+      "diesel": 5.67,
       "e85": null
-    },
-    "last_updated": "2025-10-24T10:03:15Z"
+    }
   },
   "OC-22": {
     "station_id": "OC-22",
     "brand_name": "Chevron G & M",
     "address": {
       "street": "3048 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -475,21 +410,18 @@
       "longitude": -117.8829
     },
     "prices": {
-      "regular": 5.36,
-      "midgrade": 5.56,
-      "premium": 5.76,
-      "diesel": 5.96,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T21:32:06Z"
+      "regular": 5.5,
+      "midgrade": 5.7,
+      "premium": 5.9,
+      "diesel": null,
+      "e85": 5.0
+    }
   },
   "OC-23": {
     "station_id": "OC-23",
     "brand_name": "Chevron",
     "address": {
       "street": "2995 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -497,21 +429,18 @@
       "longitude": -117.8814
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T11:38:13Z"
+      "regular": 5.49,
+      "midgrade": 5.69,
+      "premium": 5.89,
+      "diesel": 6.09,
+      "e85": 4.99
+    }
   },
   "OC-24": {
     "station_id": "OC-24",
     "brand_name": "Chevron Extra Mile - G & M",
     "address": {
       "street": "1740 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -519,21 +448,18 @@
       "longitude": -117.909
     },
     "prices": {
-      "regular": 4.97,
-      "midgrade": 5.17,
-      "premium": 5.37,
-      "diesel": 5.57,
-      "e85": 4.47
-    },
-    "last_updated": "2025-10-24T01:07:05Z"
+      "regular": 5.08,
+      "midgrade": 5.28,
+      "premium": 5.48,
+      "diesel": 5.68,
+      "e85": null
+    }
   },
   "OC-25": {
     "station_id": "OC-25",
     "brand_name": "Chevron Extra Mile",
     "address": {
       "street": "195 E 17th St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -541,21 +467,18 @@
       "longitude": -117.9077
     },
     "prices": {
-      "regular": 5.36,
-      "midgrade": 5.56,
-      "premium": 5.76,
-      "diesel": 5.96,
+      "regular": 5.5,
+      "midgrade": 5.7,
+      "premium": 5.9,
+      "diesel": 6.1,
       "e85": null
-    },
-    "last_updated": "2025-10-24T09:54:46Z"
+    }
   },
   "OC-26": {
     "station_id": "OC-26",
     "brand_name": "Mobil",
     "address": {
       "street": "3470 Fairview Rd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -563,21 +486,18 @@
       "longitude": -117.9086
     },
     "prices": {
-      "regular": 5.1,
-      "midgrade": 5.3,
-      "premium": 5.5,
-      "diesel": 5.7,
+      "regular": 5.26,
+      "midgrade": 5.46,
+      "premium": 5.66,
+      "diesel": 5.86,
       "e85": null
-    },
-    "last_updated": "2025-10-24T08:21:32Z"
+    }
   },
   "OC-27": {
     "station_id": "OC-27",
     "brand_name": "Speedway",
     "address": {
       "street": "751 Baker St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -585,21 +505,18 @@
       "longitude": -117.886
     },
     "prices": {
-      "regular": 4.95,
-      "midgrade": 5.15,
-      "premium": 5.35,
-      "diesel": 5.55,
+      "regular": 5.07,
+      "midgrade": 5.27,
+      "premium": 5.47,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T22:03:07Z"
+    }
   },
   "OC-28": {
     "station_id": "OC-28",
     "brand_name": "Arco",
     "address": {
       "street": "2100 SE Bristol St",
-      "city": "Newport Beach",
-      "state": "CA",
       "zip_code": "92660"
     },
     "location": {
@@ -607,21 +524,18 @@
       "longitude": -117.8719
     },
     "prices": {
-      "regular": 4.83,
-      "midgrade": 5.03,
-      "premium": 5.23,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T23:02:51Z"
+      "regular": 4.95,
+      "midgrade": 5.15,
+      "premium": 5.35,
+      "diesel": 5.55,
+      "e85": 4.45
+    }
   },
   "OC-29": {
     "station_id": "OC-29",
     "brand_name": "G & M Oil",
     "address": {
       "street": "3067 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -629,21 +543,18 @@
       "longitude": -117.8839
     },
     "prices": {
-      "regular": 4.91,
-      "midgrade": 5.11,
-      "premium": 5.31,
-      "diesel": 5.51,
+      "regular": 5.1,
+      "midgrade": 5.3,
+      "premium": 5.5,
+      "diesel": 5.7,
       "e85": null
-    },
-    "last_updated": "2025-10-24T12:09:08Z"
+    }
   },
   "OC-30": {
     "station_id": "OC-30",
     "brand_name": "76",
     "address": {
       "street": "393 E 17th St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -651,21 +562,18 @@
       "longitude": -117.905
     },
     "prices": {
-      "regular": 5.17,
-      "midgrade": 5.37,
-      "premium": 5.57,
-      "diesel": 5.77,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T07:36:08Z"
+      "regular": 5.29,
+      "midgrade": 5.49,
+      "premium": 5.69,
+      "diesel": null,
+      "e85": 4.79
+    }
   },
   "OC-31": {
     "station_id": "OC-31",
     "brand_name": "AM/PM",
     "address": {
       "street": "2602 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -673,21 +581,18 @@
       "longitude": -117.9195
     },
     "prices": {
-      "regular": 4.83,
-      "midgrade": 5.03,
-      "premium": 5.23,
+      "regular": 4.93,
+      "midgrade": 5.13,
+      "premium": 5.33,
       "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T14:44:12Z"
+      "e85": 4.43
+    }
   },
   "OC-32": {
     "station_id": "OC-32",
     "brand_name": "Arco",
     "address": {
       "street": "3414 S Main St",
-      "city": "Santa Ana",
-      "state": "CA",
       "zip_code": "92707"
     },
     "location": {
@@ -695,21 +600,18 @@
       "longitude": -117.8717
     },
     "prices": {
-      "regular": 4.84,
-      "midgrade": 5.04,
-      "premium": 5.24,
-      "diesel": 5.44,
-      "e85": 4.34
-    },
-    "last_updated": "2025-10-24T13:20:20Z"
+      "regular": 5.01,
+      "midgrade": 5.21,
+      "premium": 5.41,
+      "diesel": 5.61,
+      "e85": 4.51
+    }
   },
   "OC-33": {
     "station_id": "OC-33",
     "brand_name": "Costco Gas Station",
     "address": {
       "street": "17900 Newhope St",
-      "city": "Fountain Valley",
-      "state": "CA",
       "zip_code": "92708"
     },
     "location": {
@@ -717,21 +619,18 @@
       "longitude": -117.9351
     },
     "prices": {
-      "regular": 4.73,
-      "midgrade": 4.93,
-      "premium": 5.13,
-      "diesel": 5.33,
+      "regular": 4.88,
+      "midgrade": 5.08,
+      "premium": 5.28,
+      "diesel": 5.48,
       "e85": null
-    },
-    "last_updated": "2025-10-24T13:58:40Z"
+    }
   },
   "OC-34": {
     "station_id": "OC-34",
     "brand_name": "Chevron",
     "address": {
       "street": "2121 SE Bristol St",
-      "city": "Newport Beach",
-      "state": "CA",
       "zip_code": "92660"
     },
     "location": {
@@ -739,21 +638,18 @@
       "longitude": -117.8726
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T11:42:58Z"
+      "regular": 5.48,
+      "midgrade": 5.68,
+      "premium": 5.88,
+      "diesel": null,
+      "e85": 4.98
+    }
   },
   "OC-35": {
     "station_id": "OC-35",
     "brand_name": "Shell",
     "address": {
       "street": "3820 S Fairview St",
-      "city": "Santa Ana",
-      "state": "CA",
       "zip_code": "92704"
     },
     "location": {
@@ -761,21 +657,18 @@
       "longitude": -117.8961
     },
     "prices": {
-      "regular": 5.32,
-      "midgrade": 5.52,
-      "premium": 5.72,
-      "diesel": null,
-      "e85": 4.82
-    },
-    "last_updated": "2025-10-24T13:47:29Z"
+      "regular": 5.44,
+      "midgrade": 5.64,
+      "premium": 5.84,
+      "diesel": 6.04,
+      "e85": null
+    }
   },
   "OC-36": {
     "station_id": "OC-36",
     "brand_name": "Chevron",
     "address": {
       "street": "3801 S Bristol St",
-      "city": "Santa Ana",
-      "state": "CA",
       "zip_code": "92704"
     },
     "location": {
@@ -783,21 +676,18 @@
       "longitude": -117.8806
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
+      "regular": 5.42,
+      "midgrade": 5.62,
+      "premium": 5.82,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T20:30:05Z"
+    }
   },
   "OC-37": {
     "station_id": "OC-37",
     "brand_name": "Chevron",
     "address": {
       "street": "1550 Jamboree Rd",
-      "city": "Newport Beach",
-      "state": "CA",
       "zip_code": "92660"
     },
     "location": {
@@ -805,21 +695,18 @@
       "longitude": -117.8687
     },
     "prices": {
-      "regular": 5.28,
-      "midgrade": 5.48,
-      "premium": 5.68,
-      "diesel": 5.88,
+      "regular": 5.48,
+      "midgrade": 5.68,
+      "premium": 5.88,
+      "diesel": null,
       "e85": null
-    },
-    "last_updated": "2025-10-24T22:40:13Z"
+    }
   },
   "OC-38": {
     "station_id": "OC-38",
     "brand_name": "G & M Food Mart",
     "address": {
       "street": "790 W 19th St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92627"
     },
     "location": {
@@ -827,21 +714,18 @@
       "longitude": -117.9287
     },
     "prices": {
-      "regular": 4.96,
-      "midgrade": 5.16,
-      "premium": 5.36,
-      "diesel": null,
-      "e85": 4.46
-    },
-    "last_updated": "2025-10-24T05:10:39Z"
+      "regular": 5.04,
+      "midgrade": 5.24,
+      "premium": 5.44,
+      "diesel": 5.64,
+      "e85": null
+    }
   },
   "OC-39": {
     "station_id": "OC-39",
     "brand_name": "Chevron",
     "address": {
       "street": "3301 S Bristol St",
-      "city": "Santa Ana",
-      "state": "CA",
       "zip_code": "92704"
     },
     "location": {
@@ -849,21 +733,18 @@
       "longitude": -117.8814
     },
     "prices": {
-      "regular": 5.34,
-      "midgrade": 5.54,
-      "premium": 5.74,
-      "diesel": 5.94,
+      "regular": 5.45,
+      "midgrade": 5.65,
+      "premium": 5.85,
+      "diesel": 6.05,
       "e85": null
-    },
-    "last_updated": "2025-10-24T14:01:04Z"
+    }
   },
   "OC-40": {
     "station_id": "OC-40",
     "brand_name": "Chevron",
     "address": {
       "street": "301 East Coast Hwy",
-      "city": "Newport Beach",
-      "state": "CA",
       "zip_code": "92660"
     },
     "location": {
@@ -871,21 +752,18 @@
       "longitude": -117.8986
     },
     "prices": {
-      "regular": 5.34,
-      "midgrade": 5.54,
-      "premium": 5.74,
-      "diesel": 5.94,
+      "regular": 5.5,
+      "midgrade": 5.7,
+      "premium": 5.9,
+      "diesel": 6.1,
       "e85": null
-    },
-    "last_updated": "2025-10-24T19:39:47Z"
+    }
   },
   "OC-41": {
     "station_id": "OC-41",
     "brand_name": "AM / PM",
     "address": {
       "street": "300 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -893,21 +771,18 @@
       "longitude": -117.8805
     },
     "prices": {
-      "regular": 4.84,
-      "midgrade": 5.04,
-      "premium": 5.24,
-      "diesel": 5.44,
+      "regular": 4.93,
+      "midgrade": 5.13,
+      "premium": 5.33,
+      "diesel": 5.53,
       "e85": null
-    },
-    "last_updated": "2025-10-24T12:47:42Z"
+    }
   },
   "OC-42": {
     "station_id": "OC-42",
     "brand_name": "G & M Food Mart",
     "address": {
       "street": "3067 Bristol St",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -915,21 +790,18 @@
       "longitude": -117.8839
     },
     "prices": {
-      "regular": 4.9,
-      "midgrade": 5.1,
-      "premium": 5.3,
-      "diesel": 5.5,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T03:26:36Z"
+      "regular": 5.04,
+      "midgrade": 5.24,
+      "premium": 5.44,
+      "diesel": null,
+      "e85": 4.54
+    }
   },
   "OC-43": {
     "station_id": "OC-43",
     "brand_name": "AM / PM",
     "address": {
       "street": "3003 Newport Blvd",
-      "city": "Costa Mesa",
-      "state": "CA",
       "zip_code": "92626"
     },
     "location": {
@@ -937,12 +809,11 @@
       "longitude": -117.9273
     },
     "prices": {
-      "regular": 4.83,
-      "midgrade": 5.03,
-      "premium": 5.23,
-      "diesel": 5.43,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T00:41:33Z"
+      "regular": 4.99,
+      "midgrade": 5.19,
+      "premium": 5.39,
+      "diesel": 5.59,
+      "e85": 4.49
+    }
   }
 }

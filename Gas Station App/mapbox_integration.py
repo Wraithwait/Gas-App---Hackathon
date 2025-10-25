@@ -194,14 +194,13 @@ class MapboxGasStationService:
         Returns:
             Dict with route information
         """
-        url = f"{self.base_url}/directions/v5/mapbox/{profile}"
-        
         # Mapbox expects lon,lat format
         origin_coords = f"{origin[1]},{origin[0]}"  # lon,lat
         dest_coords = f"{destination[1]},{destination[0]}"  # lon,lat
-        
+
+        url = f"{self.base_url}/directions/v5/mapbox/{profile}/{origin_coords};{dest_coords}"
+
         params = {
-            'coordinates': f"{origin_coords};{dest_coords}",
             'access_token': self.access_token,
             'geometries': 'geojson',
             'overview': 'full',

@@ -113,8 +113,6 @@ def generate_station_data():
             "brand_name": brand,
             "address": {
                 "street": station_def['street'],
-                "city": station_def['city'],
-                "state": "CA",
                 "zip_code": station_def['zip']
             },
             "location": {
@@ -129,9 +127,7 @@ def generate_station_data():
                 "diesel": round(price_reg + 0.60, 2) if random.random() < 0.7 else None,
                 # 25% chance of having E85
                 "e85": round(price_reg - 0.50, 2) if random.random() < 0.25 else None
-            },
-            # Generate a fake timestamp from the "past" 24 hours
-            "last_updated": f"2025-10-24T{random.randint(0, 23):02}:{random.randint(0, 59):02}:{random.randint(0, 59):02}Z"
+            }
         }
         
         # Add to the main dictionary using the ID as the key
@@ -152,9 +148,9 @@ def save_as_csv(stations_dict, filename):
         return
         
     headers = [
-        'station_id', 'brand_name', 'street_address', 'city', 'state', 'zip_code',
-        'latitude', 'longitude', 'regular_price', 'midgrade_price', 
-        'premium_price', 'diesel_price', 'e85_price', 'last_updated'
+        'station_id', 'brand_name', 'street_address', 'zip_code',
+        'latitude', 'longitude', 'regular_price', 'midgrade_price',
+        'premium_price', 'diesel_price', 'e85_price'
     ]
     
     with open(filename, 'w', newline='') as f:
@@ -167,8 +163,6 @@ def save_as_csv(stations_dict, filename):
                 'station_id': station['station_id'],
                 'brand_name': station['brand_name'],
                 'street_address': station['address']['street'],
-                'city': station['address']['city'],
-                'state': station['address']['state'],
                 'zip_code': station['address']['zip_code'],
                 'latitude': station['location']['latitude'],
                 'longitude': station['location']['longitude'],
@@ -176,8 +170,7 @@ def save_as_csv(stations_dict, filename):
                 'midgrade_price': station['prices']['midgrade'],
                 'premium_price': station['prices']['premium'],
                 'diesel_price': station['prices']['diesel'],
-                'e85_price': station['prices']['e85'],
-                'last_updated': station['last_updated']
+                'e85_price': station['prices']['e85']
             }
             writer.writerow(row)
             

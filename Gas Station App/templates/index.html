@@ -349,6 +349,7 @@
                     
                     <div class="form-group">
                         <button class="btn" onclick="searchStations()" id="searchBtn" disabled>Find Gas Stations</button>
+                        <button class="btn" onclick="showAllStations()" style="margin-top: 10px; background: #7f8c8d;">Show All Stations</button>
                     </div>
                 </div>
             </div>
@@ -491,6 +492,29 @@
                 .addTo(map);
         }
         
+        function showAllStationsOnMap(stations) {
+            document.getElementById('mapSection').style.display = 'block';
+            
+            if (map) {
+                map.remove();
+            }
+            
+            map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v12',
+                center: [-117.9, 33.67], // Center on Orange County
+                zoom: 10
+            });
+
+            const bounds = new mapboxgl.LngLatBounds();
+            if (stations.length > 0) {
+                stations.forEach(station => {
+                    bounds.extend([station.lon, station.lat]);
+                });
+                map.fitBounds(bounds, { padding: 50, maxZoom: 15 });
+            }
+        }
+
         function addStationToMap(station) {
             if (!map) return;
             
@@ -500,7 +524,7 @@
                     <div>
                         <h4>${station.name}</h4>
                         <p><strong>Brand:</strong> ${station.brand}</p>
-                        <p><strong>Distance:</strong> ${station.distance} mi</p>
+                        ${station.distance !== undefined ? `<p><strong>Distance:</strong> ${station.distance} mi</p>` : ''}
                         <p><strong>E85:</strong> $${station.prices?.E85 || 'N/A'}</p>
                         <p><strong>87:</strong> $${station.prices?.['87'] || 'N/A'}</p>
                         <p><strong>89:</strong> $${station.prices?.['89'] || 'N/A'}</p>
@@ -609,6 +633,25 @@
             }
         }
         
+        async function showAllStations() {
+            try {
+                const response = await fetch('/all-stations');
+                const data = await response.json();
+                
+                if (data.success) {
+                    hideLocationPrompt();
+                    showAllStationsOnMap(data.results);
+                    displayResults(data.results);
+                    showStatus('locationStatus', `Showing all ${data.results.length} available stations.`, false);
+                } else {
+                    showStatus('locationStatus', 'Could not load all stations.', true);
+                }
+            } catch (error) {
+                showStatus('locationStatus', 'Error connecting to server.', true);
+            }
+        }
+
+
         // ========================================
         // HOOK: GAS PRICING DISPLAY FUNCTION
         // ========================================
@@ -624,7 +667,7 @@
             
             // Clear existing map markers
             if (map) {
-                map.getContainer().querySelectorAll('.mapboxgl-marker').forEach(marker => {
+                map.getContainer().querySelectorAll('.mapboxgl-marker').forEach(marker => { 
                     if (marker.style.color !== 'rgb(52, 152, 219)') { // Keep user location marker
                         marker.remove();
                     }
@@ -639,7 +682,8 @@
                         <thead>
                             <tr>
                                 <th>Station</th>
-                                <th>Brand</th>
+                                <th>Address</th>
+                                <th>Travel Time</th>
                                 <th>Distance</th>
                                 <th>E85</th>
                                 <th>87</th>
@@ -667,10 +711,13 @@
                                 ${rating !== 'N/A' ? `<br><small>⭐ ${rating}/5 (${station.user_ratings_total || 0} reviews)</small>` : ''}
                                 ${isOpen ? `<br><small>${isOpen}</small>` : ''}
                             </td>
-                            <td>${station.brand || 'Unknown'}</td>
+                            <td>${station.address || 'N/A'}</td>
                             <td class="distance">
-                                ${station.distance} mi
-                                <br><button onclick="getTravelInfo(${userLocation.lat}, ${userLocation.lon}, ${station.lat}, ${station.lon}, event)" 
+                                ${station.duration != null ? `~${station.duration} min` : 'N/A'}
+                            </td>
+                            <td class="distance">
+                                ${station.distance != null ? `${station.distance.toFixed(1)} mi` : 'N/A'}
+                                <br><button onclick="getTravelInfo(event)" data-dest-lat="${station.lat}" data-dest-lon="${station.lon}"
                                    class="btn-small">Get Directions</button>
                             </td>
                             <td class="price">$${prices.E85 || 'N/A'}</td>
@@ -696,8 +743,15 @@
         // Integration point: Add route optimization, traffic data,
         // alternative routes, and real-time updates
         
-        async function getTravelInfo(originLat, originLon, destLat, destLon, event) {
+        async function getTravelInfo(event) {
             event.stopPropagation(); // Prevent row click
+
+            if (!userLocation) {
+                alert("Please set your location first to get directions.");
+                return;
+            }
+            const destLat = event.target.dataset.destLat;
+            const destLon = event.target.dataset.destLon;
             
             try {
                 const response = await fetch('/travel-info', {
@@ -706,8 +760,8 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        origin_lat: originLat,
-                        origin_lon: originLon,
+                        origin_lat: userLocation.lat,
+                        origin_lon: userLocation.lon,
                         dest_lat: destLat,
                         dest_lon: destLon,
                         mode: 'driving'

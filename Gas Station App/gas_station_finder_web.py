@@ -91,14 +91,13 @@ def generate_station_data():
         price_prem = round(price_reg + 0.40, 2)
         station_data = {
             "station_id": station_id, "brand_name": brand,
-            "address": {"street": station_def['street'], "city": station_def['city'], "state": "CA", "zip_code": station_def['zip']},
+            "address": {"street": station_def['street'], "zip_code": station_def['zip']},
             "location": {"latitude": station_def['lat'], "longitude": station_def['lon']},
             "prices": {
                 "regular": price_reg, "midgrade": price_mid, "premium": price_prem,
                 "diesel": round(price_reg + 0.60, 2) if random.random() < 0.7 else None,
                 "e85": round(price_reg - 0.50, 2) if random.random() < 0.25 else None
-            },
-            "last_updated": f"2025-10-24T{random.randint(0, 23):02}:{random.randint(0, 59):02}:{random.randint(0, 59):02}Z"
+            }
         }
         stations_output[station_id] = station_data
     return stations_output
@@ -159,16 +158,16 @@ class GasStationFinderWeb:
 
                 # Construct full address string
                 addr = station_data.get("address", {})
-                full_address = f"{addr.get('street', '')}, {addr.get('city', '')}, {addr.get('state', '')} {addr.get('zip_code', '')}"
+                full_address = f"{addr.get('street', '')}, {addr.get('zip_code', '')}"
 
                 stations_list.append({
-                    "name": f"{station_data.get('brand_name', 'Unknown')} ({station_id})",
+                    "name": station_data.get('brand_name', 'Unknown Station'),
                     "brand": station_data.get("brand_name"),
                     "lat": station_data.get("location", {}).get("latitude"),
                     "lon": station_data.get("location", {}).get("longitude"),
                     "address": full_address,
                     "prices": {k: v for k, v in mapped_prices.items() if v is not None}
-                })
+                }) # This is the list of stations from the JSON file
             return stations_list
         except (IOError, json.JSONDecodeError, Exception) as e:
             print(f"❌ An unexpected error occurred while loading {filepath}: {e}")
@@ -203,70 +202,77 @@ class GasStationFinderWeb:
         # Output: List of filtered and sorted gas stations with pricing data
         # Integration point: Add real-time price updates, availability checks
 
-        # Always use the stations loaded from stations.json
-        stations_to_process = self.gas_stations
-        
-        # Pre-filter stations by brand before making expensive API calls
-        filtered_stations = []
-        for station in stations_to_process:
-            if brand != "all" and station.get("brand", "").lower() != brand.lower():
-                continue
-            filtered_stations.append(station)
+        # Create a fresh copy of stations to process for this search
+        stations_to_process = [s.copy() for s in self.gas_stations]
 
         # Use Mapbox Matrix API for accurate road distances if available
-        if self.use_real_data and self.mapbox_service and filtered_stations:
+        if self.use_real_data and self.mapbox_service and stations_to_process:
             try:
                 # Prepare coordinates for the Matrix API: [user_location, station1, station2, ...]
                 # Mapbox expects (lat, lon)
-                coordinates = [(user_lat, user_lon)] + [(s['lat'], s['lon']) for s in filtered_stations]
+                coordinates = [(user_lat, user_lon)] + [(s['lat'], s['lon']) for s in stations_to_process]
                 
                 matrix_data = self.mapbox_service.get_matrix(coordinates)
                 
-                if matrix_data and 'distances' in matrix_data:
+                if matrix_data and 'distances' in matrix_data and 'durations' in matrix_data:
                     # The first list in 'distances' is from our origin (user) to all destinations
                     road_distances_meters = matrix_data['distances'][0]
-                    
-                    # The API returns distances for all points, including origin to origin (which is 0)
-                    # So we skip the first one.
-                    for i, station in enumerate(filtered_stations):
+                    road_durations_seconds = matrix_data['durations'][0]
+
+                    for i, station in enumerate(stations_to_process):
+                        # Process distance
                         distance_meters = road_distances_meters[i + 1]
                         if distance_meters is not None:
-                            # Convert meters to miles
                             distance_miles = distance_meters / 1609.34
                             station['distance'] = round(distance_miles, 2)
                         else:
-                            # If a route is not found, mark it as very far away
                             station['distance'] = float('inf')
+                        
+                        # Process duration
+                        duration_seconds = road_durations_seconds[i + 1]
+                        if duration_seconds is not None:
+                            station['duration'] = round(duration_seconds / 60) # Convert to minutes
+
             except Exception as e:
                 print(f"❌ Error using Mapbox Matrix API, falling back to straight-line distance. Error: {e}")
-                # Fallback to straight-line distance on API error
-                for station in filtered_stations:
+                for station in stations_to_process:
                     distance = self.calculate_distance(user_lat, user_lon, station["lat"], station["lon"])
                     station["distance"] = round(distance, 2)
         else:
-            # Fallback for when Mapbox is not configured or no stations are found
-            for station in filtered_stations:
+            # Fallback for when Mapbox is not configured
+            for station in stations_to_process:
                 distance = self.calculate_distance(
                     user_lat, user_lon, station["lat"], station["lon"])
                 station["distance"] = round(distance, 2)
         
-        # Sort based on criteria
+        # 2. Filter stations based on brand and gas type availability
+        final_results = []
+        for station in stations_to_process: # Use the list that has distance/duration data
+            if brand != "all" and station.get("brand", "").lower() != brand.lower():
+                continue
+            if gas_type != "all" and gas_type not in station.get("prices", {}):
+                continue
+            final_results.append(station)
+
+        # 3. Sort the filtered stations
         if sort_by == "closest":
-            filtered_stations.sort(key=lambda x: x["distance"])
+            final_results.sort(key=lambda x: x.get("distance", float('inf')))
         elif sort_by == "cheapest":
-            def get_cheapest_price(station):
-                prices = station.get("prices", {})
-                if not prices:
-                    return float('inf')
-                return min(prices.values())
-            filtered_stations.sort(key=get_cheapest_price)
-        elif sort_by == "gas_type":
+            # If a specific gas type is selected, sort by its price
             if gas_type != "all":
-                filtered_stations.sort(key=lambda x: x.get("prices", {}).get(gas_type, float('inf')))
+                final_results.sort(key=lambda x: x.get("prices", {}).get(gas_type, float('inf')))
+            else:
+                # If 'all' gas types, find the minimum price at each station and sort by that
+                def get_best_price(station):
+                    prices = station.get("prices", {})
+                    return min(prices.values()) if prices else float('inf')
+                final_results.sort(key=get_best_price)
+        # The 'gas_type' and 'brand' sort options from the UI were redundant and less useful.
+        # The primary sorting is by 'closest' or 'cheapest', with filtering applied first.
         elif sort_by == "brand":
-            filtered_stations.sort(key=lambda x: x.get("brand", ""))
+            final_results.sort(key=lambda x: x.get("brand", ""))
         
-        return filtered_stations
+        return final_results
 
 # Initialize the finder
 finder = GasStationFinderWeb()
@@ -334,6 +340,15 @@ def search():
     return jsonify({
         'success': True,
         'results': results
+    })
+
+@app.route('/all-stations', methods=['GET'])
+def all_stations():
+    """Returns the complete list of all gas stations from the data source."""
+    # The 'distance' key will be missing, which the frontend will handle.
+    return jsonify({
+        'success': True,
+        'results': finder.gas_stations
     })
 
 @app.route('/travel-info', methods=['POST'])
