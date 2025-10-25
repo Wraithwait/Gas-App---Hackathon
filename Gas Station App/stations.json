@@ -1,324 +1,786 @@
-[
-  {
-    "station_id": "oc_1001",
-    "brand_name": "OC Gas & Mart",
+{
+  "OC-001": {
+    "station_id": "OC-001",
+    "brand_name": "Shell",
     "address": {
-      "street": "8166 Beach Blvd",
-      "city": "San Clemente",
+      "street": "2249 Harbor Blvd",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92672"
+      "zip_code": "92627"
     },
     "location": {
-      "latitude": 33.38804,
-      "longitude": -117.65248
+      "latitude": 33.6625,
+      "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.156,
-      "midgrade": 5.356,
-      "premium": 5.556,
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T18:05:57Z"
+  },
+  "OC-002": {
+    "station_id": "OC-002",
+    "brand_name": "Arco",
+    "address": {
+      "street": "2490 Fairview Rd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6844,
+      "longitude": -117.9085
+    },
+    "prices": {
+      "regular": 4.82,
+      "midgrade": 5.02,
+      "premium": 5.22,
+      "diesel": 5.42,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T02:40:14Z"
+  },
+  "OC-003": {
+    "station_id": "OC-003",
+    "brand_name": "Arco",
+    "address": {
+      "street": "2602 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6495,
+      "longitude": -117.9195
+    },
+    "prices": {
+      "regular": 4.89,
+      "midgrade": 5.09,
+      "premium": 5.29,
+      "diesel": 5.49,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T22:24:43Z"
+  },
+  "OC-004": {
+    "station_id": "OC-004",
+    "brand_name": "Arco",
+    "address": {
+      "street": "3201 Harbor Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6966,
+      "longitude": -117.9184
+    },
+    "prices": {
+      "regular": 4.89,
+      "midgrade": 5.09,
+      "premium": 5.29,
+      "diesel": null,
+      "e85": 4.39
+    },
+    "last_updated": "2025-10-24T03:11:15Z"
+  },
+  "OC-005": {
+    "station_id": "OC-005",
+    "brand_name": "Arco",
+    "address": {
+      "street": "2021 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6416,
+      "longitude": -117.913
+    },
+    "prices": {
+      "regular": 4.8,
+      "midgrade": 5.0,
+      "premium": 5.2,
+      "diesel": 5.4,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T07:03:12Z"
+  },
+  "OC-006": {
+    "station_id": "OC-006",
+    "brand_name": "Chevron",
+    "address": {
+      "street": "2160 Harbor Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6599,
+      "longitude": -117.9175
+    },
+    "prices": {
+      "regular": 5.31,
+      "midgrade": 5.51,
+      "premium": 5.71,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T23:40:52Z"
+    "last_updated": "2025-10-24T17:47:49Z"
   },
-  {
-    "station_id": "oc_1002",
-    "brand_name": "ARCO",
+  "OC-007": {
+    "station_id": "OC-007",
+    "brand_name": "Chevron",
     "address": {
-      "street": "6631 Jamboree Rd",
-      "city": "Lake Forest",
+      "street": "3190 Harbor Blvd",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92630"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.64458,
-      "longitude": -117.66603
+      "latitude": 33.6959,
+      "longitude": -117.9184
     },
     "prices": {
-      "regular": 4.92,
-      "midgrade": 5.12,
-      "premium": 5.32,
+      "regular": 5.39,
+      "midgrade": 5.59,
+      "premium": 5.79,
+      "diesel": null,
+      "e85": 4.89
+    },
+    "last_updated": "2025-10-24T12:31:55Z"
+  },
+  "OC-008": {
+    "station_id": "OC-008",
+    "brand_name": "Valero",
+    "address": {
+      "street": "2050 Harbor Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.657,
+      "longitude": -117.9176
+    },
+    "prices": {
+      "regular": 5.08,
+      "midgrade": 5.28,
+      "premium": 5.48,
+      "diesel": 5.68,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T11:23:45Z"
+  },
+  "OC-009": {
+    "station_id": "OC-009",
+    "brand_name": "Arco",
+    "address": {
+      "street": "3003 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6616,
+      "longitude": -117.9273
+    },
+    "prices": {
+      "regular": 4.84,
+      "midgrade": 5.04,
+      "premium": 5.24,
+      "diesel": 5.44,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T11:52:38Z"
+  },
+  "OC-010": {
+    "station_id": "OC-010",
+    "brand_name": "Shell",
+    "address": {
+      "street": "1201 Baker St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6888,
+      "longitude": -117.8926
+    },
+    "prices": {
+      "regular": 5.33,
+      "midgrade": 5.53,
+      "premium": 5.73,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T01:58:16Z"
+    "last_updated": "2025-10-24T12:21:54Z"
   },
-  {
-    "station_id": "oc_1003",
-    "brand_name": "Mobil",
+  "OC-011": {
+    "station_id": "OC-011",
+    "brand_name": "Sinclair",
     "address": {
-      "street": "311 Jamboree Rd",
-      "city": "Huntington Beach",
+      "street": "2502 Harbor Blvd",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92648"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.70265,
-      "longitude": -117.97334
+      "latitude": 33.6766,
+      "longitude": -117.9179
     },
     "prices": {
-      "regular": 5.162,
-      "midgrade": 5.362,
-      "premium": 5.562,
-      "diesel": 5.662,
+      "regular": 5.02,
+      "midgrade": 5.22,
+      "premium": 5.42,
+      "diesel": 5.62,
       "e85": null
     },
-    "last_updated": "2025-10-24T14:24:37Z"
+    "last_updated": "2025-10-24T07:18:08Z"
   },
-  {
-    "station_id": "oc_1004",
-    "brand_name": "Mobil",
+  "OC-012": {
+    "station_id": "OC-012",
+    "brand_name": "Arco",
     "address": {
-      "street": "693 Edinger Ave",
-      "city": "Santa Ana",
+      "street": "300 Bristol St",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92701"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.7335,
-      "longitude": -117.89539
+      "latitude": 33.6917,
+      "longitude": -117.8805
     },
     "prices": {
-      "regular": 5.148,
-      "midgrade": 5.348,
-      "premium": 5.548,
-      "diesel": 5.648,
-      "e85": 4.648
-    },
-    "last_updated": "2025-10-24T23:41:32Z"
-  },
-  {
-    "station_id": "oc_1005",
-    "brand_name": "Mobil",
-    "address": {
-      "street": "5201 Beach Blvd",
-      "city": "Lake Forest",
-      "state": "CA",
-      "zip_code": "92630"
-    },
-    "location": {
-      "latitude": 33.67184,
-      "longitude": -117.64095
-    },
-    "prices": {
-      "regular": 5.346,
-      "midgrade": 5.546,
-      "premium": 5.746,
+      "regular": 4.83,
+      "midgrade": 5.03,
+      "premium": 5.23,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T15:58:25Z"
+    "last_updated": "2025-10-24T11:56:42Z"
   },
-  {
-    "station_id": "oc_1006",
-    "brand_name": "Costco",
-    "address": {
-      "street": "6063 Jamboree Rd",
-      "city": "Irvine",
-      "state": "CA",
-      "zip_code": "92604"
-    },
-    "location": {
-      "latitude": 33.65414,
-      "longitude": -117.78778
-    },
-    "prices": {
-      "regular": 4.835,
-      "midgrade": 5.035,
-      "premium": 5.235,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T03:27:17Z"
-  },
-  {
-    "station_id": "oc_1007",
-    "brand_name": "Mobil",
-    "address": {
-      "street": "6645 Edinger Ave",
-      "city": "Mission Viejo",
-      "state": "CA",
-      "zip_code": "92691"
-    },
-    "location": {
-      "latitude": 33.59196,
-      "longitude": -117.62266
-    },
-    "prices": {
-      "regular": 5.364,
-      "midgrade": 5.564,
-      "premium": 5.764,
-      "diesel": 5.864,
-      "e85": 4.864
-    },
-    "last_updated": "2025-10-24T09:57:11Z"
-  },
-  {
-    "station_id": "oc_1008",
-    "brand_name": "Costco",
-    "address": {
-      "street": "1267 Main St",
-      "city": "Tustin",
-      "state": "CA",
-      "zip_code": "92780"
-    },
-    "location": {
-      "latitude": 33.73729,
-      "longitude": -117.83132
-    },
-    "prices": {
-      "regular": 4.815,
-      "midgrade": 5.015,
-      "premium": 5.215,
-      "diesel": 5.315,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T09:28:49Z"
-  },
-  {
-    "station_id": "oc_1009",
+  "OC-013": {
+    "station_id": "OC-013",
     "brand_name": "76",
     "address": {
-      "street": "1014 Pacific Coast Hwy",
-      "city": "Santa Ana",
+      "street": "1195 Baker St",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92701"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.80675,
-      "longitude": -117.87715
+      "latitude": 33.6886,
+      "longitude": -117.892
     },
     "prices": {
-      "regular": 5.426,
-      "midgrade": 5.626,
-      "premium": 5.826,
-      "diesel": 5.926,
+      "regular": 5.16,
+      "midgrade": 5.36,
+      "premium": 5.56,
+      "diesel": 5.76,
+      "e85": 4.66
+    },
+    "last_updated": "2025-10-24T00:50:03Z"
+  },
+  "OC-014": {
+    "station_id": "OC-014",
+    "brand_name": "Mobil",
+    "address": {
+      "street": "3006 Harbor Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6896,
+      "longitude": -117.9183
+    },
+    "prices": {
+      "regular": 5.19,
+      "midgrade": 5.39,
+      "premium": 5.59,
+      "diesel": 5.79,
       "e85": null
     },
-    "last_updated": "2025-10-24T18:27:28Z"
+    "last_updated": "2025-10-24T01:50:54Z"
   },
-  {
-    "station_id": "oc_1010",
-    "brand_name": "Chevron",
+  "OC-015": {
+    "station_id": "OC-015",
+    "brand_name": "Circle K",
     "address": {
-      "street": "483 Harbor Blvd",
-      "city": "Huntington Beach",
+      "street": "3006 Harbor Blvd",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92648"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.68784,
-      "longitude": -118.03076
+      "latitude": 33.6896,
+      "longitude": -117.9183
     },
     "prices": {
-      "regular": 5.32,
-      "midgrade": 5.52,
-      "premium": 5.72,
-      "diesel": 5.82,
+      "regular": 4.95,
+      "midgrade": 5.15,
+      "premium": 5.35,
+      "diesel": 5.55,
       "e85": null
     },
-    "last_updated": "2025-10-24T06:23:51Z"
+    "last_updated": "2025-10-24T19:32:33Z"
   },
-  {
-    "station_id": "oc_1011",
+  "OC-016": {
+    "station_id": "OC-016",
     "brand_name": "Chevron",
     "address": {
-      "street": "5957 Pacific Coast Hwy",
-      "city": "Newport Beach",
+      "street": "3000 Fairview Rd",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92663"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.6106,
-      "longitude": -117.93637
+      "latitude": 33.6946,
+      "longitude": -117.9084
     },
     "prices": {
-      "regular": 5.485,
-      "midgrade": 5.685,
-      "premium": 5.885,
+      "regular": 5.31,
+      "midgrade": 5.51,
+      "premium": 5.71,
+      "diesel": 5.91,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T02:20:47Z"
+  },
+  "OC-017": {
+    "station_id": "OC-017",
+    "brand_name": "Chevron",
+    "address": {
+      "street": "1740 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6366,
+      "longitude": -117.909
+    },
+    "prices": {
+      "regular": 5.31,
+      "midgrade": 5.51,
+      "premium": 5.71,
+      "diesel": 5.91,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T12:31:10Z"
+  },
+  "OC-018": {
+    "station_id": "OC-018",
+    "brand_name": "Gas",
+    "address": {
+      "street": "2281 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6457,
+      "longitude": -117.9158
+    },
+    "prices": {
+      "regular": 4.94,
+      "midgrade": 5.14,
+      "premium": 5.34,
+      "diesel": 5.54,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T07:47:02Z"
+  },
+  "OC-019": {
+    "station_id": "OC-019",
+    "brand_name": "Shell",
+    "address": {
+      "street": "1512 Bristol St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6784,
+      "longitude": -117.8888
+    },
+    "prices": {
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
+      "e85": 4.84
+    },
+    "last_updated": "2025-10-24T03:14:57Z"
+  },
+  "OC-020": {
+    "station_id": "OC-020",
+    "brand_name": "76",
+    "address": {
+      "street": "1900 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6393,
+      "longitude": -117.9116
+    },
+    "prices": {
+      "regular": 5.19,
+      "midgrade": 5.39,
+      "premium": 5.59,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T22:46:35Z"
+    "last_updated": "2025-10-24T21:17:48Z"
   },
-  {
-    "station_id": "oc_1012",
-    "brand_name": "Mobil",
+  "OC-021": {
+    "station_id": "OC-021",
+    "brand_name": "Speedway Express",
     "address": {
-      "street": "3942 Jamboree Rd",
-      "city": "Lake Forest",
+      "street": "799 W 19th St",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92630"
+      "zip_code": "92627"
     },
     "location": {
-      "latitude": 33.60972,
-      "longitude": -117.72091
+      "latitude": 33.6517,
+      "longitude": -117.929
     },
     "prices": {
-      "regular": 5.316,
-      "midgrade": 5.516,
-      "premium": 5.716,
-      "diesel": 5.816,
+      "regular": 4.96,
+      "midgrade": 5.16,
+      "premium": 5.36,
+      "diesel": 5.56,
       "e85": null
     },
-    "last_updated": "2025-10-24T01:30:33Z"
+    "last_updated": "2025-10-24T04:25:46Z"
   },
-  {
-    "station_id": "oc_1013",
-    "brand_name": "Sam's Club",
+  "OC-022": {
+    "station_id": "OC-022",
+    "brand_name": "Chevron G & M",
     "address": {
-      "street": "6597 Beach Blvd",
-      "city": "Huntington Beach",
+      "street": "3048 Bristol St",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92648"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.63531,
-      "longitude": -118.03734
+      "latitude": 33.6931,
+      "longitude": -117.8829
+    },
+    "prices": {
+      "regular": 5.39,
+      "midgrade": 5.59,
+      "premium": 5.79,
+      "diesel": 5.99,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T05:01:34Z"
+  },
+  "OC-023": {
+    "station_id": "OC-023",
+    "brand_name": "Chevron",
+    "address": {
+      "street": "2995 Bristol St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6932,
+      "longitude": -117.8814
+    },
+    "prices": {
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T11:50:41Z"
+  },
+  "OC-024": {
+    "station_id": "OC-024",
+    "brand_name": "Chevron Extra Mile - G & M",
+    "address": {
+      "street": "1740 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6366,
+      "longitude": -117.909
+    },
+    "prices": {
+      "regular": 4.95,
+      "midgrade": 5.15,
+      "premium": 5.35,
+      "diesel": null,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T19:44:11Z"
+  },
+  "OC-025": {
+    "station_id": "OC-025",
+    "brand_name": "Chevron Extra Mile",
+    "address": {
+      "street": "195 E 17th St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6415,
+      "longitude": -117.9077
+    },
+    "prices": {
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T10:29:25Z"
+  },
+  "OC-026": {
+    "station_id": "OC-026",
+    "brand_name": "Mobil",
+    "address": {
+      "street": "3470 Fairview Rd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.7042,
+      "longitude": -117.9086
+    },
+    "prices": {
+      "regular": 5.18,
+      "midgrade": 5.38,
+      "premium": 5.58,
+      "diesel": null,
+      "e85": 4.68
+    },
+    "last_updated": "2025-10-24T06:25:21Z"
+  },
+  "OC-027": {
+    "station_id": "OC-027",
+    "brand_name": "Speedway",
+    "address": {
+      "street": "751 Baker St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6874,
+      "longitude": -117.886
+    },
+    "prices": {
+      "regular": 4.91,
+      "midgrade": 5.11,
+      "premium": 5.31,
+      "diesel": null,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T11:18:16Z"
+  },
+  "OC-028": {
+    "station_id": "OC-028",
+    "brand_name": "Arco",
+    "address": {
+      "street": "2100 SE Bristol St",
+      "city": "Newport Beach",
+      "state": "CA",
+      "zip_code": "92660"
+    },
+    "location": {
+      "latitude": 33.6706,
+      "longitude": -117.8719
+    },
+    "prices": {
+      "regular": 4.89,
+      "midgrade": 5.09,
+      "premium": 5.29,
+      "diesel": 5.49,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T06:43:19Z"
+  },
+  "OC-029": {
+    "station_id": "OC-029",
+    "brand_name": "G & M Oil",
+    "address": {
+      "street": "3067 Bristol St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6945,
+      "longitude": -117.8839
+    },
+    "prices": {
+      "regular": 4.96,
+      "midgrade": 5.16,
+      "premium": 5.36,
+      "diesel": 5.56,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T10:42:17Z"
+  },
+  "OC-030": {
+    "station_id": "OC-030",
+    "brand_name": "76",
+    "address": {
+      "street": "393 E 17th St",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6433,
+      "longitude": -117.905
+    },
+    "prices": {
+      "regular": 5.15,
+      "midgrade": 5.35,
+      "premium": 5.55,
+      "diesel": 5.75,
+      "e85": 4.65
+    },
+    "last_updated": "2025-10-24T13:55:41Z"
+  },
+  "OC-031": {
+    "station_id": "OC-031",
+    "brand_name": "AM/PM",
+    "address": {
+      "street": "2602 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92627"
+    },
+    "location": {
+      "latitude": 33.6495,
+      "longitude": -117.9195
+    },
+    "prices": {
+      "regular": 4.82,
+      "midgrade": 5.02,
+      "premium": 5.22,
+      "diesel": 5.42,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T22:41:00Z"
+  },
+  "OC-032": {
+    "station_id": "OC-032",
+    "brand_name": "Arco",
+    "address": {
+      "street": "3414 S Main St",
+      "city": "Santa Ana",
+      "state": "CA",
+      "zip_code": "92707"
+    },
+    "location": {
+      "latitude": 33.7011,
+      "longitude": -117.8717
+    },
+    "prices": {
+      "regular": 4.85,
+      "midgrade": 5.05,
+      "premium": 5.25,
+      "diesel": 5.45,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T01:25:40Z"
+  },
+  "OC-033": {
+    "station_id": "OC-033",
+    "brand_name": "Costco Gas Station",
+    "address": {
+      "street": "17900 Newhope St",
+      "city": "Fountain Valley",
+      "state": "CA",
+      "zip_code": "92708"
+    },
+    "location": {
+      "latitude": 33.7145,
+      "longitude": -117.9351
     },
     "prices": {
       "regular": 4.76,
       "midgrade": 4.96,
       "premium": 5.16,
-      "diesel": 5.26,
+      "diesel": 5.36,
       "e85": null
     },
-    "last_updated": "2025-10-24T00:10:42Z"
+    "last_updated": "2025-10-24T13:56:46Z"
   },
-  {
-    "station_id": "oc_1014",
-    "brand_name": "Beach Stop Fuel",
+  "OC-034": {
+    "station_id": "OC-034",
+    "brand_name": "Chevron",
     "address": {
-      "street": "8125 El Toro Rd",
-      "city": "Irvine",
+      "street": "2121 SE Bristol St",
+      "city": "Newport Beach",
       "state": "CA",
-      "zip_code": "92604"
+      "zip_code": "92660"
     },
     "location": {
-      "latitude": 33.72367,
-      "longitude": -117.81855
+      "latitude": 33.6713,
+      "longitude": -117.8726
     },
     "prices": {
-      "regular": 5.087,
-      "midgrade": 5.287,
-      "premium": 5.487,
+      "regular": 5.32,
+      "midgrade": 5.52,
+      "premium": 5.72,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T18:22:11Z"
+    "last_updated": "2025-10-24T03:51:33Z"
   },
-  {
-    "station_id": "oc_1015",
-    "brand_name": "76",
+  "OC-035": {
+    "station_id": "OC-035",
+    "brand_name": "Shell",
     "address": {
-      "street": "1324 Edinger Ave",
-      "city": "Anaheim",
+      "street": "3820 S Fairview St",
+      "city": "Santa Ana",
       "state": "CA",
-      "zip_code": "92801"
+      "zip_code": "92704"
     },
     "location": {
-      "latitude": 33.83135,
-      "longitude": -117.93927
+      "latitude": 33.7032,
+      "longitude": -117.8961
+    },
+    "prices": {
+      "regular": 5.3,
+      "midgrade": 5.5,
+      "premium": 5.7,
+      "diesel": 5.9,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T10:55:21Z"
+  },
+  "OC-036": {
+    "station_id": "OC-036",
+    "brand_name": "Chevron",
+    "address": {
+      "street": "3801 S Bristol St",
+      "city": "Santa Ana",
+      "state": "CA",
+      "zip_code": "92704"
+    },
+    "location": {
+      "latitude": 33.7045,
+      "longitude": -117.8806
     },
     "prices": {
       "regular": 5.36,
@@ -327,776 +789,160 @@
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T17:52:47Z"
+    "last_updated": "2025-10-24T09:37:05Z"
   },
-  {
-    "station_id": "oc_1016",
-    "brand_name": "Beach Stop Fuel",
+  "OC-037": {
+    "station_id": "OC-037",
+    "brand_name": "Chevron",
     "address": {
-      "street": "583 El Toro Rd",
+      "street": "1550 Jamboree Rd",
+      "city": "Newport Beach",
+      "state": "CA",
+      "zip_code": "92660"
+    },
+    "location": {
+      "latitude": 33.6414,
+      "longitude": -117.8687
+    },
+    "prices": {
+      "regular": 5.36,
+      "midgrade": 5.56,
+      "premium": 5.76,
+      "diesel": 5.96,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T01:57:45Z"
+  },
+  "OC-038": {
+    "station_id": "OC-038",
+    "brand_name": "G & M Food Mart",
+    "address": {
+      "street": "790 W 19th St",
       "city": "Costa Mesa",
       "state": "CA",
       "zip_code": "92627"
     },
     "location": {
-      "latitude": 33.68571,
-      "longitude": -117.88353
+      "latitude": 33.6511,
+      "longitude": -117.9287
     },
     "prices": {
-      "regular": 5.224,
-      "midgrade": 5.424,
-      "premium": 5.624,
-      "diesel": 5.724,
-      "e85": 4.724
-    },
-    "last_updated": "2025-10-24T15:55:16Z"
-  },
-  {
-    "station_id": "oc_1017",
-    "brand_name": "Beach Stop Fuel",
-    "address": {
-      "street": "967 MacArthur Blvd",
-      "city": "Laguna Niguel",
-      "state": "CA",
-      "zip_code": "92677"
-    },
-    "location": {
-      "latitude": 33.47772,
-      "longitude": -117.73465
-    },
-    "prices": {
-      "regular": 5.186,
-      "midgrade": 5.386,
-      "premium": 5.586,
-      "diesel": 5.686,
-      "e85": 4.686
-    },
-    "last_updated": "2025-10-24T22:59:59Z"
-  },
-  {
-    "station_id": "oc_1018",
-    "brand_name": "Sam's Club",
-    "address": {
-      "street": "2005 Edinger Ave",
-      "city": "Huntington Beach",
-      "state": "CA",
-      "zip_code": "92648"
-    },
-    "location": {
-      "latitude": 33.67184,
-      "longitude": -117.95248
-    },
-    "prices": {
-      "regular": 4.869,
-      "midgrade": 5.069,
-      "premium": 5.269,
+      "regular": 4.91,
+      "midgrade": 5.11,
+      "premium": 5.31,
       "diesel": null,
       "e85": null
     },
-    "last_updated": "2025-10-24T03:03:09Z"
+    "last_updated": "2025-10-24T00:46:50Z"
   },
-  {
-    "station_id": "oc_1019",
-    "brand_name": "Sam's Club",
-    "address": {
-      "street": "6918 Barranca Pkwy",
-      "city": "Irvine",
-      "state": "CA",
-      "zip_code": "92604"
-    },
-    "location": {
-      "latitude": 33.72627,
-      "longitude": -117.78146
-    },
-    "prices": {
-      "regular": 5.014,
-      "midgrade": 5.214,
-      "premium": 5.414,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T04:09:22Z"
-  },
-  {
-    "station_id": "oc_1020",
-    "brand_name": "Speedy Gas",
-    "address": {
-      "street": "4554 Pacific Coast Hwy",
-      "city": "Tustin",
-      "state": "CA",
-      "zip_code": "92780"
-    },
-    "location": {
-      "latitude": 33.73439,
-      "longitude": -117.86288
-    },
-    "prices": {
-      "regular": 5.113,
-      "midgrade": 5.313,
-      "premium": 5.513,
-      "diesel": 5.613,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T10:35:06Z"
-  },
-  {
-    "station_id": "oc_1021",
+  "OC-039": {
+    "station_id": "OC-039",
     "brand_name": "Chevron",
     "address": {
-      "street": "9553 Main St",
-      "city": "Lake Forest",
-      "state": "CA",
-      "zip_code": "92630"
-    },
-    "location": {
-      "latitude": 33.61595,
-      "longitude": -117.73988
-    },
-    "prices": {
-      "regular": 5.375,
-      "midgrade": 5.575,
-      "premium": 5.775,
-      "diesel": null,
-      "e85": 4.875
-    },
-    "last_updated": "2025-10-24T10:47:02Z"
-  },
-  {
-    "station_id": "oc_1022",
-    "brand_name": "ARCO",
-    "address": {
-      "street": "6329 Barranca Pkwy",
-      "city": "Irvine",
-      "state": "CA",
-      "zip_code": "92604"
-    },
-    "location": {
-      "latitude": 33.66829,
-      "longitude": -117.8233
-    },
-    "prices": {
-      "regular": 4.919,
-      "midgrade": 5.119,
-      "premium": 5.319,
-      "diesel": 5.419,
-      "e85": 4.419
-    },
-    "last_updated": "2025-10-24T20:44:28Z"
-  },
-  {
-    "station_id": "oc_1023",
-    "brand_name": "Costco",
-    "address": {
-      "street": "7000 MacArthur Blvd",
-      "city": "Anaheim",
-      "state": "CA",
-      "zip_code": "92801"
-    },
-    "location": {
-      "latitude": 33.8833,
-      "longitude": -118.00777
-    },
-    "prices": {
-      "regular": 4.765,
-      "midgrade": 4.965,
-      "premium": 5.165,
-      "diesel": 5.265,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T22:59:42Z"
-  },
-  {
-    "station_id": "oc_1024",
-    "brand_name": "Shell",
-    "address": {
-      "street": "985 Pacific Coast Hwy",
-      "city": "Newport Beach",
-      "state": "CA",
-      "zip_code": "92663"
-    },
-    "location": {
-      "latitude": 33.62646,
-      "longitude": -117.96211
-    },
-    "prices": {
-      "regular": 5.379,
-      "midgrade": 5.579,
-      "premium": 5.779,
-      "diesel": null,
-      "e85": 4.879
-    },
-    "last_updated": "2025-10-24T14:44:49Z"
-  },
-  {
-    "station_id": "oc_1025",
-    "brand_name": "ARCO",
-    "address": {
-      "street": "2811 Main St",
-      "city": "Anaheim",
-      "state": "CA",
-      "zip_code": "92801"
-    },
-    "location": {
-      "latitude": 33.87161,
-      "longitude": -117.96158
-    },
-    "prices": {
-      "regular": 5.017,
-      "midgrade": 5.217,
-      "premium": 5.417,
-      "diesel": 5.517,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T01:13:28Z"
-  },
-  {
-    "station_id": "oc_1026",
-    "brand_name": "Shell",
-    "address": {
-      "street": "9114 Main St",
-      "city": "Tustin",
-      "state": "CA",
-      "zip_code": "92780"
-    },
-    "location": {
-      "latitude": 33.73129,
-      "longitude": -117.7842
-    },
-    "prices": {
-      "regular": 5.437,
-      "midgrade": 5.637,
-      "premium": 5.837,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T14:24:12Z"
-  },
-  {
-    "station_id": "oc_1027",
-    "brand_name": "Mobil",
-    "address": {
-      "street": "7452 Culver Dr",
-      "city": "Lake Forest",
-      "state": "CA",
-      "zip_code": "92630"
-    },
-    "location": {
-      "latitude": 33.65842,
-      "longitude": -117.66872
-    },
-    "prices": {
-      "regular": 5.185,
-      "midgrade": 5.385,
-      "premium": 5.585,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T10:26:08Z"
-  },
-  {
-    "station_id": "oc_1028",
-    "brand_name": "Costco",
-    "address": {
-      "street": "9461 Harbor Blvd",
-      "city": "Laguna Niguel",
-      "state": "CA",
-      "zip_code": "92677"
-    },
-    "location": {
-      "latitude": 33.54844,
-      "longitude": -117.70393
-    },
-    "prices": {
-      "regular": 4.728,
-      "midgrade": 4.928,
-      "premium": 5.128,
-      "diesel": 5.228,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T23:46:59Z"
-  },
-  {
-    "station_id": "oc_1029",
-    "brand_name": "Sam's Club",
-    "address": {
-      "street": "9008 El Toro Rd",
-      "city": "Tustin",
-      "state": "CA",
-      "zip_code": "92780"
-    },
-    "location": {
-      "latitude": 33.71883,
-      "longitude": -117.82818
-    },
-    "prices": {
-      "regular": 4.764,
-      "midgrade": 4.964,
-      "premium": 5.164,
-      "diesel": 5.264,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T00:36:37Z"
-  },
-  {
-    "station_id": "oc_1030",
-    "brand_name": "OC Gas & Mart",
-    "address": {
-      "street": "3941 Beach Blvd",
-      "city": "Irvine",
-      "state": "CA",
-      "zip_code": "92604"
-    },
-    "location": {
-      "latitude": 33.65449,
-      "longitude": -117.75391
-    },
-    "prices": {
-      "regular": 5.135,
-      "midgrade": 5.335,
-      "premium": 5.535,
-      "diesel": 5.635,
-      "e85": 4.635
-    },
-    "last_updated": "2025-10-24T09:30:10Z"
-  },
-  {
-    "station_id": "oc_1031",
-    "brand_name": "Speedy Gas",
-    "address": {
-      "street": "9840 Main St",
-      "city": "Mission Viejo",
-      "state": "CA",
-      "zip_code": "92691"
-    },
-    "location": {
-      "latitude": 33.55445,
-      "longitude": -117.69757
-    },
-    "prices": {
-      "regular": 5.028,
-      "midgrade": 5.228,
-      "premium": 5.428,
-      "diesel": 5.528,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T16:57:17Z"
-  },
-  {
-    "station_id": "oc_1032",
-    "brand_name": "Chevron",
-    "address": {
-      "street": "378 Brookhurst St",
-      "city": "Costa Mesa",
-      "state": "CA",
-      "zip_code": "92627"
-    },
-    "location": {
-      "latitude": 33.61726,
-      "longitude": -117.9163
-    },
-    "prices": {
-      "regular": 5.439,
-      "midgrade": 5.639,
-      "premium": 5.839,
-      "diesel": 5.939,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T12:47:47Z"
-  },
-  {
-    "station_id": "oc_1033",
-    "brand_name": "Chevron",
-    "address": {
-      "street": "9733 Beach Blvd",
-      "city": "San Clemente",
-      "state": "CA",
-      "zip_code": "92672"
-    },
-    "location": {
-      "latitude": 33.39205,
-      "longitude": -117.63165
-    },
-    "prices": {
-      "regular": 5.427,
-      "midgrade": 5.627,
-      "premium": 5.827,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T16:04:30Z"
-  },
-  {
-    "station_id": "oc_1034",
-    "brand_name": "OC Gas & Mart",
-    "address": {
-      "street": "6438 Brookhurst St",
-      "city": "Fullerton",
-      "state": "CA",
-      "zip_code": "92832"
-    },
-    "location": {
-      "latitude": 33.826,
-      "longitude": -117.95614
-    },
-    "prices": {
-      "regular": 4.992,
-      "midgrade": 5.192,
-      "premium": 5.392,
-      "diesel": 5.492,
-      "e85": 4.492
-    },
-    "last_updated": "2025-10-24T20:57:21Z"
-  },
-  {
-    "station_id": "oc_1035",
-    "brand_name": "ARCO",
-    "address": {
-      "street": "8364 MacArthur Blvd",
-      "city": "Garden Grove",
-      "state": "CA",
-      "zip_code": "92843"
-    },
-    "location": {
-      "latitude": 33.772,
-      "longitude": -118.00365
-    },
-    "prices": {
-      "regular": 5.075,
-      "midgrade": 5.275,
-      "premium": 5.475,
-      "diesel": 5.575,
-      "e85": 4.575
-    },
-    "last_updated": "2025-10-24T12:21:26Z"
-  },
-  {
-    "station_id": "oc_1036",
-    "brand_name": "Shell",
-    "address": {
-      "street": "2266 Main St",
-      "city": "San Clemente",
-      "state": "CA",
-      "zip_code": "92672"
-    },
-    "location": {
-      "latitude": 33.45674,
-      "longitude": -117.56154
-    },
-    "prices": {
-      "regular": 5.507,
-      "midgrade": 5.707,
-      "premium": 5.907,
-      "diesel": 6.007,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T23:19:37Z"
-  },
-  {
-    "station_id": "oc_1037",
-    "brand_name": "Costco",
-    "address": {
-      "street": "9044 Main St",
-      "city": "Newport Beach",
-      "state": "CA",
-      "zip_code": "92663"
-    },
-    "location": {
-      "latitude": 33.60266,
-      "longitude": -117.96089
-    },
-    "prices": {
-      "regular": 4.866,
-      "midgrade": 5.066,
-      "premium": 5.266,
-      "diesel": 5.366,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T00:27:42Z"
-  },
-  {
-    "station_id": "oc_1038",
-    "brand_name": "Costco",
-    "address": {
-      "street": "3039 Jamboree Rd",
-      "city": "Mission Viejo",
-      "state": "CA",
-      "zip_code": "92691"
-    },
-    "location": {
-      "latitude": 33.62798,
-      "longitude": -117.69836
-    },
-    "prices": {
-      "regular": 4.854,
-      "midgrade": 5.054,
-      "premium": 5.254,
-      "diesel": 5.354,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T13:53:35Z"
-  },
-  {
-    "station_id": "oc_1039",
-    "brand_name": "OC Gas & Mart",
-    "address": {
-      "street": "7818 Brookhurst St",
+      "street": "3301 S Bristol St",
       "city": "Santa Ana",
       "state": "CA",
-      "zip_code": "92701"
+      "zip_code": "92704"
     },
     "location": {
-      "latitude": 33.72949,
-      "longitude": -117.84216
+      "latitude": 33.7088,
+      "longitude": -117.8814
     },
     "prices": {
-      "regular": 4.977,
-      "midgrade": 5.177,
-      "premium": 5.377,
-      "diesel": null,
-      "e85": 4.477
-    },
-    "last_updated": "2025-10-24T01:31:56Z"
-  },
-  {
-    "station_id": "oc_1040",
-    "brand_name": "76",
-    "address": {
-      "street": "9566 Pacific Coast Hwy",
-      "city": "Fullerton",
-      "state": "CA",
-      "zip_code": "92832"
-    },
-    "location": {
-      "latitude": 33.82902,
-      "longitude": -117.89342
-    },
-    "prices": {
-      "regular": 5.282,
-      "midgrade": 5.482,
-      "premium": 5.682,
-      "diesel": 5.782,
-      "e85": 4.782
-    },
-    "last_updated": "2025-10-24T04:21:17Z"
-  },
-  {
-    "station_id": "oc_1041",
-    "brand_name": "76",
-    "address": {
-      "street": "8872 El Toro Rd",
-      "city": "Laguna Niguel",
-      "state": "CA",
-      "zip_code": "92677"
-    },
-    "location": {
-      "latitude": 33.54227,
-      "longitude": -117.70498
-    },
-    "prices": {
-      "regular": 5.236,
-      "midgrade": 5.436,
-      "premium": 5.636,
-      "diesel": null,
+      "regular": 5.38,
+      "midgrade": 5.58,
+      "premium": 5.78,
+      "diesel": 5.98,
       "e85": null
     },
-    "last_updated": "2025-10-24T14:14:18Z"
+    "last_updated": "2025-10-24T03:22:15Z"
   },
-  {
-    "station_id": "oc_1042",
-    "brand_name": "OC Gas & Mart",
-    "address": {
-      "street": "7609 Barranca Pkwy",
-      "city": "Costa Mesa",
-      "state": "CA",
-      "zip_code": "92627"
-    },
-    "location": {
-      "latitude": 33.69262,
-      "longitude": -117.94175
-    },
-    "prices": {
-      "regular": 5.129,
-      "midgrade": 5.329,
-      "premium": 5.529,
-      "diesel": 5.629,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T03:06:16Z"
-  },
-  {
-    "station_id": "oc_1043",
-    "brand_name": "OC Gas & Mart",
-    "address": {
-      "street": "6856 El Toro Rd",
-      "city": "Anaheim",
-      "state": "CA",
-      "zip_code": "92801"
-    },
-    "location": {
-      "latitude": 33.87047,
-      "longitude": -117.96287
-    },
-    "prices": {
-      "regular": 5.11,
-      "midgrade": 5.31,
-      "premium": 5.51,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T06:16:21Z"
-  },
-  {
-    "station_id": "oc_1044",
-    "brand_name": "76",
-    "address": {
-      "street": "7039 Brookhurst St",
-      "city": "Fullerton",
-      "state": "CA",
-      "zip_code": "92832"
-    },
-    "location": {
-      "latitude": 33.90842,
-      "longitude": -117.96427
-    },
-    "prices": {
-      "regular": 5.361,
-      "midgrade": 5.561,
-      "premium": 5.761,
-      "diesel": null,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T11:01:17Z"
-  },
-  {
-    "station_id": "oc_1045",
-    "brand_name": "Sam's Club",
-    "address": {
-      "street": "6574 Edinger Ave",
-      "city": "Fullerton",
-      "state": "CA",
-      "zip_code": "92832"
-    },
-    "location": {
-      "latitude": 33.82921,
-      "longitude": -117.92399
-    },
-    "prices": {
-      "regular": 4.74,
-      "midgrade": 4.94,
-      "premium": 5.14,
-      "diesel": null,
-      "e85": 4.24
-    },
-    "last_updated": "2025-10-24T08:35:41Z"
-  },
-  {
-    "station_id": "oc_1046",
+  "OC-040": {
+    "station_id": "OC-040",
     "brand_name": "Chevron",
     "address": {
-      "street": "654 Beach Blvd",
-      "city": "Fullerton",
+      "street": "301 East Coast Hwy",
+      "city": "Newport Beach",
       "state": "CA",
-      "zip_code": "92832"
+      "zip_code": "92660"
     },
     "location": {
-      "latitude": 33.81047,
-      "longitude": -117.94286
+      "latitude": 33.612,
+      "longitude": -117.8986
     },
     "prices": {
-      "regular": 5.571,
-      "midgrade": 5.771,
-      "premium": 5.971,
-      "diesel": 6.071,
-      "e85": null
+      "regular": 5.37,
+      "midgrade": 5.57,
+      "premium": 5.77,
+      "diesel": 5.97,
+      "e85": 4.87
     },
-    "last_updated": "2025-10-24T02:52:14Z"
+    "last_updated": "2025-10-24T19:21:15Z"
   },
-  {
-    "station_id": "oc_1047",
-    "brand_name": "Mobil",
+  "OC-041": {
+    "station_id": "OC-041",
+    "brand_name": "AM / PM",
     "address": {
-      "street": "3651 Jamboree Rd",
-      "city": "Huntington Beach",
+      "street": "300 Bristol St",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92648"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.66178,
-      "longitude": -118.01195
+      "latitude": 33.6917,
+      "longitude": -117.8805
     },
     "prices": {
-      "regular": 5.345,
-      "midgrade": 5.545,
-      "premium": 5.745,
-      "diesel": 5.845,
-      "e85": null
-    },
-    "last_updated": "2025-10-24T03:21:25Z"
-  },
-  {
-    "station_id": "oc_1048",
-    "brand_name": "ARCO",
-    "address": {
-      "street": "5498 MacArthur Blvd",
-      "city": "Mission Viejo",
-      "state": "CA",
-      "zip_code": "92691"
-    },
-    "location": {
-      "latitude": 33.60621,
-      "longitude": -117.66315
-    },
-    "prices": {
-      "regular": 5.059,
-      "midgrade": 5.259,
-      "premium": 5.459,
+      "regular": 5.0,
+      "midgrade": 5.2,
+      "premium": 5.4,
       "diesel": null,
-      "e85": 4.559
-    },
-    "last_updated": "2025-10-24T07:02:45Z"
-  },
-  {
-    "station_id": "oc_1049",
-    "brand_name": "Beach Stop Fuel",
-    "address": {
-      "street": "6334 El Toro Rd",
-      "city": "Fullerton",
-      "state": "CA",
-      "zip_code": "92832"
-    },
-    "location": {
-      "latitude": 33.89352,
-      "longitude": -117.93329
-    },
-    "prices": {
-      "regular": 5.021,
-      "midgrade": 5.221,
-      "premium": 5.421,
-      "diesel": 5.521,
       "e85": null
     },
-    "last_updated": "2025-10-24T06:36:46Z"
+    "last_updated": "2025-10-24T18:09:59Z"
   },
-  {
-    "station_id": "oc_1050",
-    "brand_name": "Sam's Club",
+  "OC-042": {
+    "station_id": "OC-042",
+    "brand_name": "G & M Food Mart",
     "address": {
-      "street": "5966 Main St",
-      "city": "Mission Viejo",
+      "street": "3067 Bristol St",
+      "city": "Costa Mesa",
       "state": "CA",
-      "zip_code": "92691"
+      "zip_code": "92626"
     },
     "location": {
-      "latitude": 33.59829,
-      "longitude": -117.68751
+      "latitude": 33.6945,
+      "longitude": -117.8839
     },
     "prices": {
-      "regular": 4.809,
-      "midgrade": 5.009,
-      "premium": 5.209,
-      "diesel": 5.309,
-      "e85": 4.309
+      "regular": 4.93,
+      "midgrade": 5.13,
+      "premium": 5.33,
+      "diesel": 5.53,
+      "e85": null
     },
-    "last_updated": "2025-10-24T09:25:25Z"
+    "last_updated": "2025-10-24T16:09:15Z"
+  },
+  "OC-043": {
+    "station_id": "OC-043",
+    "brand_name": "AM / PM",
+    "address": {
+      "street": "3003 Newport Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zip_code": "92626"
+    },
+    "location": {
+      "latitude": 33.6616,
+      "longitude": -117.9273
+    },
+    "prices": {
+      "regular": 5.0,
+      "midgrade": 5.2,
+      "premium": 5.4,
+      "diesel": null,
+      "e85": null
+    },
+    "last_updated": "2025-10-24T05:03:19Z"
   }
-]
+}
