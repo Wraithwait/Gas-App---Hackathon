@@ -1,1 +1,2 @@
-source ./bin/activate
+Running Environment: source .venv/bin/activate
+Running Server: flask run
