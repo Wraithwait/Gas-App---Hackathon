@@ -1,12 +1,10 @@
 from flask import Flask, jsonify, request
 import json
 
-AVERAGE_CAR_MPG = 24.9
-
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
-def requestForData():
+def requestForData(): 
     grade = request.args.get("grade", "default")
     brand = request.args.get("brand", "default")
     sortingType = request.args.get("sortingType", "default")
@@ -72,18 +70,24 @@ def sortByBrand(dictionary, brand) :
     return filtered
 
 def sortByShortest(dictionary) :
-
+    
     pass
 
 def sortByCheapest(dictionary) :
-    cheapest = {}
-    lowest_price = 100
+    cheapest = None
+    lowestPrice = float("inf")
     
     for key, info in dictionary.items() :
-        for value in info["prices"].values() :
-            if value < lowest_price :
-                lowest_price = value
-                cheapest = dictionary[key]
+        prices = info["prices"].values()
+        minPrice = float("inf")
+
+        for p in prices :
+            if p is not None and price < minPrice:
+                minPrice = price
+
+        if minPrice < lowestPrice : 
+            lowestPrice = minPrice
+            cheapest = {key: info}
                 
     return cheapest
 
