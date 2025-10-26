@@ -110,7 +110,7 @@ export default function Dashboard() {
 	  sort: sortMode || "Defaullt",
 	});
 
-	const response = await fetch('http://127.0.0.1:5000/?${params.toString()}');
+	const response = await fetch(`http://127.0.0.1:5000/?${params.toString()}`);
 	const data = await response.json();
 	setStations(data);
 	setLoading(false);
@@ -287,8 +287,8 @@ export default function Dashboard() {
                       <li key={i} className="rounded bg-slate-800 px-3 py-2">
                         <div className="font-semibold text-white">{s.brand_name}</div>
                         <div className="text-slate-400 text-xs">
-                          Address: {s.address || "N/A"}
-                        </div>
+  						  Address: {s.address ? `${s.address.street}, ${s.address.zip_code}` : "N/A"}
+						</div>>
                         <div className="text-slate-400 text-xs">
                           Prices:{" "}
                           {Object.entries(s.prices)

@@ -1,13 +1,15 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/", methods=["GET"])
 def requestForData(): 
-    grade = request.args.get("grade", "default")
-    brand = request.args.get("brand", "default")
-    sortingType = request.args.get("sortingType", "default")
+    grade = request.args.get("grade", "default").lower()
+    brand = request.args.get("brand", "default").lower()
+    sortingType = request.args.get("sortingType", "default").lower()
 
     file = open("stations.json", "r")
     dictionary = json.load(file)
@@ -24,7 +26,7 @@ def requestForData():
             case "cheapest":
                 dictionary = sortByCheapest(dictionary)
 
-    return jsonify(dictionary)
+    return jsonify(list(dictionary.values()))
 
 def sortByGrade(dictionary, grade) :
     filtered = {}
@@ -64,7 +66,7 @@ def sortByGrade(dictionary, grade) :
 def sortByBrand(dictionary, brand) :
     filtered = {}
     for key, info in dictionary.items() :
-        if info["brand_name"].lower() == brand.lower() :
+        if info["brand_name"].lower() == brand :
             filtered[key] = info
     
     return filtered
@@ -82,8 +84,8 @@ def sortByCheapest(dictionary) :
         minPrice = float("inf")
 
         for p in prices :
-            if p is not None and price < minPrice:
-                minPrice = price
+            if p is not None and p < minPrice:
+                minPrice = p
 
         if minPrice < lowestPrice : 
             lowestPrice = minPrice
