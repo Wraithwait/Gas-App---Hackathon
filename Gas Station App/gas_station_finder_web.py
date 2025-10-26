@@ -6,7 +6,6 @@ This version provides a web GUI that works without tkinter
 
 from flask import Flask, render_template, request, jsonify
 import requests
-from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import json
 import random
@@ -16,6 +15,7 @@ import os
 import sys
 from dotenv import load_dotenv
 from mapbox_integration import MapboxGasStationService
+from geopy.geocoders import Nominatim
 
 # Load environment variables from .env file
 load_dotenv()
@@ -111,8 +111,9 @@ def save_as_json(stations_dict, filename):
 class GasStationFinderWeb:
     def __init__(self):
         # Initialize Mapbox API service
-        self.mapbox_access_token = os.getenv('MAPBOX_ACCESS_TOKEN')
-        if self.mapbox_access_token:
+        # Use your provided token directly. For production, use environment variables.
+        self.mapbox_access_token = os.getenv('MAPBOX_ACCESS_TOKEN', "pk.eyJ1Ijoid3JhaXRod2FpdCIsImEiOiJjbWg2cHRiajgwa3N0MmpvbW9mZ2lxeGtqIn0.UXl2DSFjbSSRntzofhFm9g")
+        if self.mapbox_access_token: 
             self.mapbox_service = MapboxGasStationService(self.mapbox_access_token)
             self.use_real_data = True
         else:
@@ -211,7 +212,7 @@ class GasStationFinderWeb:
             # Calculate distance
             distance = self.calculate_distance(
                 user_lat, user_lon, station["lat"], station["lon"])
-            station["distance"] = round(distance, 2)
+            station["distance_miles"] = round(distance, 2)
             
             # Estimate travel time assuming an average speed of 30 mph
             # (distance / speed) * 60 minutes/hour
@@ -224,7 +225,7 @@ class GasStationFinderWeb:
         for station in stations_to_process: # Use the list that has distance/duration data
 
             # Apply radius filter
-            if station.get('distance', float('inf')) > radius:
+            if station.get('distance_miles', float('inf')) > radius:
                 continue
 
             # Apply brand filter
@@ -397,46 +398,6 @@ def get_travel_info():
                 'note': 'Estimated travel time (straight-line distance)'
             }
         })
-
-@app.route('/station-details', methods=['POST'])
-def get_station_details():
-    """Get detailed information about a specific gas station"""
-    # ========================================
-    # HOOK: STATION DETAILS API
-    # ========================================
-    # This endpoint provides detailed information about a specific station
-    # Input: place_id or station coordinates
-    # Output: Detailed station information, photos, reviews, etc.
-    
-    data = request.get_json()
-    place_id = data.get('place_id')
-    
-    if not place_id:
-        return jsonify({'error': 'Place ID required'})
-    
-    if finder.use_real_data and finder.mapbox_service:
-        try:
-            # Mapbox doesn't have detailed place information like Google Places
-            # We can use the place_id to get basic info from our search results
-            # For now, return a basic response
-            return jsonify({
-                'success': True,
-                'details': {
-                    'name': 'Gas Station',
-                    'formatted_address': 'Address not available',
-                    'rating': 'N/A',
-                    'user_ratings_total': 0,
-                    'formatted_phone_number': 'Not available',
-                    'website': None,
-                    'business_status': 'OPERATIONAL',
-                    'photos': []
-                }
-            })
-                
-        except Exception as e:
-            return jsonify({'error': f'Error getting station details: {str(e)}'})
-    else:
-        return jsonify({'error': 'Mapbox API not available'})
 
 if __name__ == '__main__':
     import socket
