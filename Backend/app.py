@@ -9,7 +9,7 @@ def requestForData():
     brand = request.args.get("brand", "default")
     sortingType = request.args.get("sortingType", "default")
 
-    file = open("Gas Station App/stations.json", "r")
+    file = open("stations.json", "r")
     dictionary = json.load(file)
     file.close()
     
@@ -88,10 +88,3 @@ def sortByCheapest(dictionary) :
         if minPrice < lowestPrice : 
             lowestPrice = minPrice
             cheapest = {key: info}
-                
-    return cheapest
-
-def updateData() :
-    #update the .json to have acurate data
-    #call the fabricator to replace old data
-    pass

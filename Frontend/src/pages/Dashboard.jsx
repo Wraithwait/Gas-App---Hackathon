@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Building2, Fuel, ChevronDown, ChevronUp } from "lucide-react";
+import { useEffect } from "react";
 
 /* ---------- Theme helpers ---------- */
 const pumpkin = "bg-orange-500";
@@ -47,21 +48,19 @@ const SelectableItem = ({ children, selected, onClick }) => (
 /* ---------- Page ---------- */
 
 export default function Dashboard() {
-  // OPEN the sidebar on first load
   const [open, setOpen] = useState(true);
-  // Keep sections CLOSED
   const [brandsOpen, setBrandsOpen] = useState(false);
   const [gasOpen, setGasOpen] = useState(false);
-  // Pre-select Optimal
   const [sortMode, setSortMode] = useState("optimal");
-
-  // Distance default 10 miles
   const [radiusMi, setRadiusMi] = useState(10);
-
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [selectedFuel, setSelectedFuel] = useState(null);
 
+  const [stations, setStations] = useState([]);
+  const [loading, setLoading] = useState(false);
   const SIDEBAR_W = 360;
+  const openTransition = { type: "tween", duration: 0.55, ease: [0.16, 1, 0.3, 1] };
+  const closeTransition = { type: "tween", duration: 0.45, ease: [0.16, 1, 0.3, 1] };
 
   const brandList = [
     "Shell",
@@ -90,9 +89,32 @@ export default function Dashboard() {
     "Premium: 91",
     "Ethanol: E85",
   ];
+	
+  useEffect(() => {
+	  fetchStations();
+  }, [selectedFuel, selectedBrand, sortMode]);
 
-  const openTransition = { type: "tween", duration: 0.55, ease: [0.16, 1, 0.3, 1] };
-  const closeTransition = { type: "tween", duration: 0.45, ease: [0.16, 1, 0.3, 1] };
+  async function fetchStations() {
+    setLoading(true);
+    let grade = "default";
+    if (selectedFuel) {
+      if (selectedFuel.includes("87")) grade = "regular";
+      else if (selectedFuel.includes("89")) grade = "midgrade";
+      else if (selectedFuel.includes("91")) grade = "premium";
+      else if (selectedFuel.toLowerCase().includes("e85")) grade = "e85";
+    }
+
+	const params = new URLSearchParams({
+	  grade,
+	  brand: selectedBrand || "Default",
+	  sort: sortMode || "Defaullt",
+	});
+
+	const response = await fetch('http://127.0.0.1:5000/?${params.toString()}');
+	const data = await response.json();
+	setStations(data);
+	setLoading(false);
+  }
 
   return (
     <div className="min-h-screen bg-[radial-gradient(90%_120%_at_50%_-10%,#1f2937_0%,#0b1220_70%)] text-white">
@@ -105,17 +127,15 @@ export default function Dashboard() {
 
       <main className="mx-auto max-w-6xl px-4 py-6">
         <section className="relative overflow-hidden rounded-2xl bg-slate-900/60 ring-1 ring-white/10 shadow-xl">
-          {/* Filters pill */}
+          {/* Filters button */}
           <button
             onClick={() => setOpen((o) => !o)}
             type="button"
-            aria-expanded={open}
-            className={
-              "absolute left-4 top-3 z-30 rounded-full px-4 py-1 text-sm font-semibold shadow-sm ring-2 transition " +
-              (open
+            className={`absolute left-4 top-3 z-30 rounded-full px-4 py-1 text-sm font-semibold shadow-sm ring-2 transition ${
+              open
                 ? "bg-gray-300 text-gray-800 ring-gray-300 hover:bg-gray-400"
-                : "bg-gray-600 text-white ring-gray-600/30 hover:bg-gray-700")
-            }
+                : "bg-gray-600 text-white ring-gray-600/30 hover:bg-gray-700"
+            }`}
           >
             Filters
           </button>
@@ -132,17 +152,16 @@ export default function Dashboard() {
                   transition={open ? openTransition : closeTransition}
                   className="absolute left-0 top-0 z-20 h-full w-[360px] border-r border-white/10 bg-slate-900/80 p-4 pt-12"
                 >
-                  {/* BRANDS (collapsed by default) */}
+                  {/* BRAND selector */}
                   <div className="mb-4">
                     <button
                       type="button"
                       onClick={() => setBrandsOpen((b) => !b)}
-                      className={
-                        "flex w-full items-center justify-between rounded-lg px-2 py-2 font-semibold transition " +
-                        (brandsOpen
+                      className={`flex w-full items-center justify-between rounded-lg px-2 py-2 font-semibold transition ${
+                        brandsOpen
                           ? "bg-gray-100 text-gray-800 ring-1 ring-gray-200"
-                          : "text-slate-200 hover:bg-slate-800/60")
-                      }
+                          : "text-slate-200 hover:bg-slate-800/60"
+                      }`}
                     >
                       <span className="flex items-center gap-2">
                         <Building2 className="h-4 w-4" />
@@ -179,17 +198,16 @@ export default function Dashboard() {
                     </AnimatePresence>
                   </div>
 
-                  {/* GAS TYPE (collapsed by default) */}
+                  {/* GAS TYPE selector */}
                   <div className="mb-4">
                     <button
                       type="button"
                       onClick={() => setGasOpen((g) => !g)}
-                      className={
-                        "flex w-full items-center justify-between rounded-lg px-2 py-2 font-semibold transition " +
-                        (gasOpen
+                      className={`flex w-full items-center justify-between rounded-lg px-2 py-2 font-semibold transition ${
+                        gasOpen
                           ? "bg-gray-100 text-gray-800 ring-1 ring-gray-200"
-                          : "text-slate-200 hover:bg-slate-800/60")
-                      }
+                          : "text-slate-200 hover:bg-slate-800/60"
+                      }`}
                     >
                       <span className="flex items-center gap-2">
                         <Fuel className="h-4 w-4" />
@@ -209,74 +227,46 @@ export default function Dashboard() {
                           className="pl-2 pt-2"
                         >
                           <div className="space-y-1">
-                            {["Regular: 87", "Midgrade: 89", "Premium: 91", "Ethanol: E85"].map(
-                              (label) => (
-                                <SelectableItem
-                                  key={label}
-                                  selected={selectedFuel === label}
-                                  onClick={() =>
-                                    setSelectedFuel((cur) => (cur === label ? null : label))
-                                  }
-                                >
-                                  {label}
-                                </SelectableItem>
-                              )
-                            )}
+                            {fuelOptions.map((label) => (
+                              <SelectableItem
+                                key={label}
+                                selected={selectedFuel === label}
+                                onClick={() =>
+                                  setSelectedFuel((cur) => (cur === label ? null : label))
+                                }
+                              >
+                                {label}
+                              </SelectableItem>
+                            ))}
                           </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
 
-                  {/* DISTANCE (stays at 10 by default) */}
-                  <div className="mb-4">
-                    <div className="mb-1 text-sm font-semibold text-slate-200">
-                      Distance
-                    </div>
-                    <div className="flex items-center justify-between text-sm text-slate-300">
-                      <span>0 mi</span>
-                      <span className="font-medium text-white">{radiusMi} mi</span>
-                      <span>30 mi</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={1}
-                      max={30}
-                      value={radiusMi}
-                      onChange={(e) => setRadiusMi(Number(e.target.value))}
-                      className="mt-2 w-full accent-orange-500"
-                    />
-                  </div>
-
-                  {/* Toggles (Optimal pre-checked) */}
+                  {/* TOGGLES */}
                   <div className="border-t border-white/10 pt-3">
                     <ToggleSwitch
                       label="Closest"
-                      active={sortMode === "closest"}
-                      onToggle={() =>
-                        setSortMode((m) => (m === "closest" ? null : "closest"))
-                      }
+                      active={sortMode === "shortest"}
+                      onToggle={() => setSortMode("shortest")}
                     />
                     <ToggleSwitch
                       label="Cheapest"
                       active={sortMode === "cheapest"}
-                      onToggle={() =>
-                        setSortMode((m) => (m === "cheapest" ? null : "cheapest"))
-                      }
+                      onToggle={() => setSortMode("cheapest")}
                     />
                     <ToggleSwitch
                       label="Optimal"
                       active={sortMode === "optimal"}
-                      onToggle={() =>
-                        setSortMode((m) => (m === "optimal" ? null : "optimal"))
-                      }
+                      onToggle={() => setSortMode("optimal")}
                     />
                   </div>
                 </motion.aside>
               )}
             </AnimatePresence>
 
-            {/* Content */}
+            {/* RESULTS */}
             <motion.div
               className="relative p-3"
               animate={{ x: open ? SIDEBAR_W : 0 }}
@@ -286,46 +276,30 @@ export default function Dashboard() {
                 Nearby Gas Stations
               </div>
 
-              <motion.div
-                layout
-                className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_340px]"
-              >
-                {/* Map */}
-                <div className="grid h-[70vh] place-items-center rounded-2xl border border-white/10 bg-slate-800 text-slate-200">
-                  Map goes here
-                </div>
-
-                {/* Results */}
-                <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-3">
-                  <div className="mb-2 flex items-center justify-between text-sm font-semibold text-slate-200">
-                    <span>Results</span>
-                    <div className="flex flex-wrap items-center gap-2">
-                      {selectedBrand && (
-                        <span className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
-                          {selectedBrand}
-                        </span>
-                      )}
-                      {selectedFuel && (
-                        <span className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
-                          {selectedFuel}
-                        </span>
-                      )}
-                      {sortMode && (
-                        <span className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
-                          {sortMode.charAt(0).toUpperCase() + sortMode.slice(1)}
-                        </span>
-                      )}
-                      <span className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
-                        {radiusMi} mi
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="text-sm text-slate-300">
-                    No stations found in this radius.
-                  </div>
-                </div>
-              </motion.div>
+              <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-3 text-sm text-slate-300">
+                {loading ? (
+                  <div>Loading...</div>
+                ) : stations.length === 0 ? (
+                  <div>No stations found.</div>
+                ) : (
+                  <ul className="space-y-2">
+                    {stations.map((s, i) => (
+                      <li key={i} className="rounded bg-slate-800 px-3 py-2">
+                        <div className="font-semibold text-white">{s.brand_name}</div>
+                        <div className="text-slate-400 text-xs">
+                          Address: {s.address || "N/A"}
+                        </div>
+                        <div className="text-slate-400 text-xs">
+                          Prices:{" "}
+                          {Object.entries(s.prices)
+                            .map(([k, v]) => `${k}: ${v ?? "N/A"}`)
+                            .join(", ")}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </motion.div>
           </div>
         </section>
