@@ -47,6 +47,7 @@ const SelectableItem = ({ children, selected, onClick }) => (
 /* ---------- Page ---------- */
 
 export default function Dashboard() {
+<<<<<<<< HEAD:front_end_updated2/src/pages/Dashboard.jsx
   // OPEN the sidebar on first load
   const [open, setOpen] = useState(true);
   // Keep sections CLOSED
@@ -54,12 +55,29 @@ export default function Dashboard() {
   const [gasOpen, setGasOpen] = useState(false);
   // Pre-select Optimal
   const [sortMode, setSortMode] = useState("optimal");
+========
+  // Sidebar open on first load
+  const [open, setOpen] = useState(true);
 
-  // Distance default 10 miles
+  // Sections COLLAPSED on first load (with defaults already selected)
+  const [brandsOpen, setBrandsOpen] = useState(false);
+  const [gasOpen, setGasOpen] = useState(false);
+
+  // Sort defaults to "cheapest"; no optional/nullable state
+  const [sortMode, setSortMode] = useState("cheapest");
+>>>>>>>> 0d8103e4f442b525970a40048901f2d98c1e04b2:Upated front end/src/pages/Dashboard.jsx
+
+  // Distance default 10 miles (max 10)
   const [radiusMi, setRadiusMi] = useState(10);
 
+<<<<<<<< HEAD:front_end_updated2/src/pages/Dashboard.jsx
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [selectedFuel, setSelectedFuel] = useState(null);
+========
+  // Single-select with "All" sentinel for both; pre-selected
+  const [selectedBrand, setSelectedBrand] = useState("All");
+  const [selectedFuel, setSelectedFuel] = useState("All");
+>>>>>>>> 0d8103e4f442b525970a40048901f2d98c1e04b2:Upated front end/src/pages/Dashboard.jsx
 
   const SIDEBAR_W = 360;
 
@@ -94,14 +112,86 @@ export default function Dashboard() {
   const openTransition = { type: "tween", duration: 0.55, ease: [0.16, 1, 0.3, 1] };
   const closeTransition = { type: "tween", duration: 0.45, ease: [0.16, 1, 0.3, 1] };
 
+<<<<<<<< HEAD:front_end_updated2/src/pages/Dashboard.jsx
+========
+  // --- Bounce animations (slower + longer) ---
+  const bounceA = { y: [0, -26, 0] }; // ghosts 1 & 4 (in sync)
+  const bounceB = { y: [0, -26, 0] }; // ghosts 2 & 3 (in sync, offset from A)
+  const bounceTransitionA = { duration: 2.0, repeat: Infinity, ease: "easeInOut" };
+  const bounceTransitionB = { duration: 2.0, repeat: Infinity, ease: "easeInOut", delay: 1.0 }; // half-cycle offset // half-cycle offset for nice rhythm
+
+  const chips = [
+    selectedBrand === "All" ? "All Brands" : selectedBrand,
+    selectedFuel === "All" ? "All Gas" : selectedFuel,
+    sortMode ? sortMode.charAt(0).toUpperCase() + sortMode.slice(1) : null,
+    `${radiusMi} mi`,
+  ].filter(Boolean);
+
+>>>>>>>> 0d8103e4f442b525970a40048901f2d98c1e04b2:Upated front end/src/pages/Dashboard.jsx
   return (
-    <div className="min-h-screen bg-[radial-gradient(90%_120%_at_50%_-10%,#1f2937_0%,#0b1220_70%)] text-white">
+    <div className="relative min-h-screen bg-[radial-gradient(90%_120%_at_50%_-10%,#1f2937_0%,#0b1220_70%)] text-white">
+      {/* local styles for the halloween float animation */}
+      <style>{`
+        /* Bounce handled by framer-motion; keeping this block for future page-level styles */
+      `}</style>
+
       {/* Top bar */}
       <header className="flex h-16 items-center border-b border-white/10 bg-slate-900/40 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4">
           <img src="/home_page/newlogo.png" alt="Friendly Fumes" className="h-10 w-auto" />
         </div>
       </header>
+
+      {/* Halloween Decorations (from first design) */}
+      <motion.img
+        src="/dashboard_page/ghost1.png"
+        alt="Ghost Left Top"
+        animate={bounceA}
+        transition={bounceTransitionA}
+        className="absolute top-16 left-[85px] w-[200px] h-auto"
+      />
+
+      <img
+        src="/dashboard_page/bat1.png"
+        alt="Bat Left Middle"
+        className="absolute top-1/2 left-[135px] w-24 scale-150 transform -translate-y-1/2"
+      />
+
+      <motion.img
+        src="/dashboard_page/ghost2.png"
+        alt="Ghost Left Bottom"
+        animate={bounceB}
+        transition={bounceTransitionB}
+        className="absolute bottom-8 left-[85px] w-[160px] h-auto"
+      />
+
+      <img
+        src="/dashboard_page/moon.png"
+        alt="Moon Center Bottom"
+        className="absolute bottom-[30px] left-1/2 w-[260px] h-auto transform -translate-x-[44%]"
+      />
+
+      <motion.img
+        src="/dashboard_page/ghost3.png"
+        alt="Ghost Right Top"
+        animate={bounceB}
+        transition={bounceTransitionB}
+        className="absolute top-[100px] right-[85px] w-[200px] h-auto"
+      />
+
+      <img
+        src="/dashboard_page/bat2.png"
+        alt="Bat Right Middle"
+        className="absolute top-1/2 right-[135px] w-24 scale-150 transform -translate-y-1/2"
+      />
+
+      <motion.img
+        src="/dashboard_page/ghost4.png"
+        alt="Ghost Right Bottom"
+        animate={bounceA}
+        transition={bounceTransitionA}
+        className="absolute bottom-20 right-[85px] w-[200px] h-auto"
+      />
 
       <main className="mx-auto max-w-6xl px-4 py-6">
         <section className="relative overflow-hidden rounded-2xl bg-slate-900/60 ring-1 ring-white/10 shadow-xl">
@@ -248,7 +338,11 @@ export default function Dashboard() {
                     />
                   </div>
 
+<<<<<<<< HEAD:front_end_updated2/src/pages/Dashboard.jsx
                   {/* Toggles (Optimal pre-checked) */}
+========
+                  {/* Sort toggles (Cheapest pre-checked, only two modes) */}
+>>>>>>>> 0d8103e4f442b525970a40048901f2d98c1e04b2:Upated front end/src/pages/Dashboard.jsx
                   <div className="border-t border-white/10 pt-3">
                     <ToggleSwitch
                       label="Closest"
@@ -300,6 +394,7 @@ export default function Dashboard() {
                   <div className="mb-2 flex items-center justify-between text-sm font-semibold text-slate-200">
                     <span>Results</span>
                     <div className="flex flex-wrap items-center gap-2">
+<<<<<<<< HEAD:front_end_updated2/src/pages/Dashboard.jsx
                       {selectedBrand && (
                         <span className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
                           {selectedBrand}
@@ -318,6 +413,16 @@ export default function Dashboard() {
                       <span className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
                         {radiusMi} mi
                       </span>
+========
+                      {chips.map((chip, i) => (
+                        <span
+                          key={i}
+                          className="rounded-full bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100"
+                        >
+                          {chip}
+                        </span>
+                      ))}
+>>>>>>>> 0d8103e4f442b525970a40048901f2d98c1e04b2:Upated front end/src/pages/Dashboard.jsx
                     </div>
                   </div>
 
