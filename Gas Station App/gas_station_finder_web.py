@@ -193,7 +193,7 @@ class GasStationFinderWeb:
         return geodesic((lat1, lon1), (lat2, lon2)).miles
     
     def search_gas_stations(self, user_lat: float, user_lon: float, sort_by: str = "closest", 
-                          gas_type: str = "all", brand: str = "all") -> List[Dict]:
+                          gas_type: str = "all", brand: str = "all", radius: float = 10.0) -> List[Dict]:
         """Search and return gas stations based on criteria"""
         # ========================================
         # HOOK: GAS STATION SEARCH AND FILTERING
@@ -222,6 +222,10 @@ class GasStationFinderWeb:
         # 2. Filter the processed stations list in-place
         results = []
         for station in stations_to_process: # Use the list that has distance/duration data
+
+            # Apply radius filter
+            if station.get('distance', float('inf')) > radius:
+                continue
 
             # Apply brand filter
             if brand != "all" and station.get("brand", "").lower() != brand.lower():
@@ -290,11 +294,12 @@ def search():
     sort_by = data.get('sort_by', 'closest')
     gas_type = data.get('gas_type', 'all')
     brand = data.get('brand', 'all')
+    radius = float(data.get('radius', 10.0))
     
     if not user_lat or not user_lon:
         return jsonify({'error': 'Location not set'})
     
-    results = finder.search_gas_stations(user_lat, user_lon, sort_by, gas_type, brand)
+    results = finder.search_gas_stations(user_lat, user_lon, sort_by, gas_type, brand, radius)
     
     return jsonify({
         'success': True,

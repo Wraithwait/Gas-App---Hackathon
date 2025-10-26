@@ -266,6 +266,10 @@
             gap: 20px;
         }
         
+        .slider-container {
+            grid-column: 1 / -1; /* Span across all columns in the grid */
+        }
+
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -364,6 +368,13 @@
                         </select>
                     </div>
                     
+                    <div class="form-group slider-container">
+                        <label for="radius">Search Radius: <span id="radiusValue">10</span> mi</label>
+                        <input type="range" id="radius" min="1" max="50" value="10" 
+                               oninput="document.getElementById('radiusValue').textContent = this.value;"
+                               style="width: 100%; margin-top: 5px;">
+                    </div>
+
                     <div class="form-group">
                         <button class="btn" onclick="searchStations()" id="searchBtn" disabled>Find Gas Stations</button>
                         <button class="btn" onclick="showAllStations()" style="margin-top: 10px; background: #7f8c8d;">Show All Stations</button>
@@ -622,6 +633,7 @@
             const sortBy = document.getElementById('sortBy').value;
             const gasType = document.getElementById('gasType').value;
             const brand = document.getElementById('brand').value;
+            const radius = document.getElementById('radius').value;
             
             try {
                 const response = await fetch('/search', {
@@ -634,7 +646,8 @@
                         lon: userLocation.lon,
                         sort_by: sortBy,
                         gas_type: gasType,
-                        brand: brand
+                        brand: brand,
+                        radius: radius
                     })
                 });
                 
