@@ -133,15 +133,9 @@ class GasStationFinderWeb:
         # ========================================
         # HOOK: GAS PRICING INFORMATION SOURCE
         # ========================================
-        # This is where gas station data and pricing information is loaded.
-        # On every startup, it regenerates stations.json for fresh data.
+        # This is where gas station data is loaded from a static file.
+        # To update the data, run 'Gas Stations.py' manually.
         try:
-            # Always generate a new, updated stations.json on startup
-            print("🔄 Generating updated station data...")
-            station_data_dict = generate_station_data()
-            save_as_json(station_data_dict, filepath)
-            print(f"✅ Successfully generated '{filepath}' with updated prices.")
-
             with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             stations_list = []
@@ -167,10 +161,17 @@ class GasStationFinderWeb:
                     "lon": station_data.get("location", {}).get("longitude"),
                     "address": full_address,
                     "prices": {k: v for k, v in mapped_prices.items() if v is not None}
-                }) # This is the list of stations from the JSON file
+                })
             return stations_list
-        except (IOError, json.JSONDecodeError, Exception) as e:
-            print(f"❌ An unexpected error occurred while loading {filepath}: {e}")
+        except FileNotFoundError:
+            print(f"❌ CRITICAL ERROR: The data file '{filepath}' was not found.")
+            print("💡 Please create a 'stations.json' file or run 'Gas Stations.py' to generate it.")
+            return []
+        except json.JSONDecodeError:
+            print(f"❌ CRITICAL ERROR: Could not decode JSON from '{filepath}'. The file might be corrupt.")
+            return []
+        except Exception as e:
+            print(f"❌ An unexpected error occurred while loading '{filepath}': {e}")
             return []
     
     def get_user_location(self, address: str) -> tuple:
@@ -205,74 +206,32 @@ class GasStationFinderWeb:
         # Create a fresh copy of stations to process for this search
         stations_to_process = [s.copy() for s in self.gas_stations]
 
-        # Use Mapbox Matrix API for accurate road distances if available
-        if self.use_real_data and self.mapbox_service and stations_to_process:
-            try:
-                # Prepare coordinates for the Matrix API: [user_location, station1, station2, ...]
-                # Mapbox expects (lat, lon)
-                coordinates = [(user_lat, user_lon)] + [(s['lat'], s['lon']) for s in stations_to_process]
-                
-                matrix_data = self.mapbox_service.get_matrix(coordinates)
-                
-                if matrix_data and 'distances' in matrix_data and 'durations' in matrix_data:
-                    # The first list in 'distances' is from our origin (user) to all destinations
-                    road_distances_meters = matrix_data['distances'][0]
-                    road_durations_seconds = matrix_data['durations'][0]
-
-                    for i, station in enumerate(stations_to_process):
-                        # Process distance
-                        distance_meters = road_distances_meters[i + 1]
-                        if distance_meters is not None:
-                            distance_miles = distance_meters / 1609.34
-                            station['distance'] = round(distance_miles, 2)
-                        else:
-                            station['distance'] = float('inf')
-                        
-                        # Process duration
-                        duration_seconds = road_durations_seconds[i + 1]
-                        if duration_seconds is not None:
-                            station['duration'] = round(duration_seconds / 60) # Convert to minutes
-
-            except Exception as e:
-                print(f"❌ Error using Mapbox Matrix API, falling back to straight-line distance. Error: {e}")
-                for station in stations_to_process:
-                    distance = self.calculate_distance(user_lat, user_lon, station["lat"], station["lon"])
-                    station["distance"] = round(distance, 2)
-        else:
-            # Fallback for when Mapbox is not configured
-            for station in stations_to_process:
-                distance = self.calculate_distance(
-                    user_lat, user_lon, station["lat"], station["lon"])
-                station["distance"] = round(distance, 2)
+        # Always use straight-line ("as the crow flies") distance
+        for station in stations_to_process:
+            # Calculate distance
+            distance = self.calculate_distance(
+                user_lat, user_lon, station["lat"], station["lon"])
+            station["distance"] = round(distance, 2)
+            
+            # Estimate travel time assuming an average speed of 30 mph
+            # (distance / speed) * 60 minutes/hour
+            if distance < float('inf'):
+                estimated_time_minutes = (distance / 30) * 60
+                station['duration'] = round(estimated_time_minutes)
         
-        # 2. Filter stations based on brand and gas type availability
-        final_results = []
+        # 2. Filter the processed stations list in-place
+        results = []
         for station in stations_to_process: # Use the list that has distance/duration data
+
+            # Apply brand filter
             if brand != "all" and station.get("brand", "").lower() != brand.lower():
                 continue
+            # Apply gas type filter
             if gas_type != "all" and gas_type not in station.get("prices", {}):
                 continue
-            final_results.append(station)
+            results.append(station)
 
-        # 3. Sort the filtered stations
-        if sort_by == "closest":
-            final_results.sort(key=lambda x: x.get("distance", float('inf')))
-        elif sort_by == "cheapest":
-            # If a specific gas type is selected, sort by its price
-            if gas_type != "all":
-                final_results.sort(key=lambda x: x.get("prices", {}).get(gas_type, float('inf')))
-            else:
-                # If 'all' gas types, find the minimum price at each station and sort by that
-                def get_best_price(station):
-                    prices = station.get("prices", {})
-                    return min(prices.values()) if prices else float('inf')
-                final_results.sort(key=get_best_price)
-        # The 'gas_type' and 'brand' sort options from the UI were redundant and less useful.
-        # The primary sorting is by 'closest' or 'cheapest', with filtering applied first.
-        elif sort_by == "brand":
-            final_results.sort(key=lambda x: x.get("brand", ""))
-        
-        return final_results
+        return results
 
 # Initialize the finder
 finder = GasStationFinderWeb()
@@ -350,6 +309,17 @@ def all_stations():
         'success': True,
         'results': finder.gas_stations
     })
+
+@app.route('/refresh-data', methods=['POST'])
+def refresh_data():
+    """Generates a new stations.json file with updated prices."""
+    try:
+        print("🔄 Regenerating station data file...")
+        station_data_dict = generate_station_data()
+        save_as_json(station_data_dict, 'stations.json')
+        return jsonify({'success': True, 'message': 'Station data has been refreshed.'})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
 
 @app.route('/travel-info', methods=['POST'])
 def get_travel_info():

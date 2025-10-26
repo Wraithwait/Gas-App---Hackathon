@@ -11,10 +11,10 @@
       "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.42,
-      "midgrade": 5.62,
-      "premium": 5.82,
-      "diesel": null,
+      "regular": 5.31,
+      "midgrade": 5.51,
+      "premium": 5.71,
+      "diesel": 5.91,
       "e85": null
     }
   },
@@ -30,11 +30,11 @@
       "longitude": -117.9085
     },
     "prices": {
-      "regular": 5.01,
-      "midgrade": 5.21,
-      "premium": 5.41,
-      "diesel": null,
-      "e85": null
+      "regular": 4.84,
+      "midgrade": 5.04,
+      "premium": 5.24,
+      "diesel": 5.44,
+      "e85": 4.34
     }
   },
   "OC-03": {
@@ -49,10 +49,10 @@
       "longitude": -117.9195
     },
     "prices": {
-      "regular": 4.99,
-      "midgrade": 5.19,
-      "premium": 5.39,
-      "diesel": 5.59,
+      "regular": 4.85,
+      "midgrade": 5.05,
+      "premium": 5.25,
+      "diesel": null,
       "e85": null
     }
   },
@@ -68,11 +68,11 @@
       "longitude": -117.9184
     },
     "prices": {
-      "regular": 4.99,
-      "midgrade": 5.19,
-      "premium": 5.39,
-      "diesel": 5.59,
-      "e85": null
+      "regular": 4.9,
+      "midgrade": 5.1,
+      "premium": 5.3,
+      "diesel": 5.5,
+      "e85": 4.4
     }
   },
   "OC-05": {
@@ -87,10 +87,10 @@
       "longitude": -117.913
     },
     "prices": {
-      "regular": 4.94,
-      "midgrade": 5.14,
-      "premium": 5.34,
-      "diesel": 5.54,
+      "regular": 4.8,
+      "midgrade": 5.0,
+      "premium": 5.2,
+      "diesel": null,
       "e85": null
     }
   },
@@ -106,11 +106,11 @@
       "longitude": -117.9175
     },
     "prices": {
-      "regular": 5.48,
-      "midgrade": 5.68,
-      "premium": 5.88,
-      "diesel": null,
-      "e85": null
+      "regular": 5.33,
+      "midgrade": 5.53,
+      "premium": 5.73,
+      "diesel": 5.93,
+      "e85": 4.83
     }
   },
   "OC-07": {
@@ -125,10 +125,10 @@
       "longitude": -117.9184
     },
     "prices": {
-      "regular": 5.44,
-      "midgrade": 5.64,
-      "premium": 5.84,
-      "diesel": null,
+      "regular": 5.32,
+      "midgrade": 5.52,
+      "premium": 5.72,
+      "diesel": 5.92,
       "e85": null
     }
   },
@@ -144,9 +144,9 @@
       "longitude": -117.9176
     },
     "prices": {
-      "regular": 5.17,
-      "midgrade": 5.37,
-      "premium": 5.57,
+      "regular": 5.06,
+      "midgrade": 5.26,
+      "premium": 5.46,
       "diesel": null,
       "e85": null
     }
@@ -163,10 +163,10 @@
       "longitude": -117.9273
     },
     "prices": {
-      "regular": 4.92,
-      "midgrade": 5.12,
-      "premium": 5.32,
-      "diesel": 5.52,
+      "regular": 4.83,
+      "midgrade": 5.03,
+      "premium": 5.23,
+      "diesel": null,
       "e85": null
     }
   },
@@ -182,11 +182,11 @@
       "longitude": -117.8926
     },
     "prices": {
-      "regular": 5.44,
-      "midgrade": 5.64,
-      "premium": 5.84,
-      "diesel": null,
-      "e85": null
+      "regular": 5.27,
+      "midgrade": 5.47,
+      "premium": 5.67,
+      "diesel": 5.87,
+      "e85": 4.77
     }
   },
   "OC-11": {
@@ -201,11 +201,11 @@
       "longitude": -117.9179
     },
     "prices": {
-      "regular": 5.07,
-      "midgrade": 5.27,
-      "premium": 5.47,
-      "diesel": 5.67,
-      "e85": 4.57
+      "regular": 5.04,
+      "midgrade": 5.24,
+      "premium": 5.44,
+      "diesel": null,
+      "e85": null
     }
   },
   "OC-12": {
@@ -220,9 +220,9 @@
       "longitude": -117.8805
     },
     "prices": {
-      "regular": 4.94,
-      "midgrade": 5.14,
-      "premium": 5.34,
+      "regular": 4.85,
+      "midgrade": 5.05,
+      "premium": 5.25,
       "diesel": null,
       "e85": null
     }
@@ -239,10 +239,10 @@
       "longitude": -117.892
     },
     "prices": {
-      "regular": 5.3,
-      "midgrade": 5.5,
-      "premium": 5.7,
-      "diesel": 5.9,
+      "regular": 5.18,
+      "midgrade": 5.38,
+      "premium": 5.58,
+      "diesel": null,
       "e85": null
     }
   },
@@ -258,11 +258,11 @@
       "longitude": -117.9183
     },
     "prices": {
-      "regular": 5.31,
-      "midgrade": 5.51,
-      "premium": 5.71,
-      "diesel": 5.91,
-      "e85": 4.81
+      "regular": 5.18,
+      "midgrade": 5.38,
+      "premium": 5.58,
+      "diesel": 5.78,
+      "e85": null
     }
   },
   "OC-15": {
@@ -277,10 +277,10 @@
       "longitude": -117.9183
     },
     "prices": {
-      "regular": 5.06,
-      "midgrade": 5.26,
-      "premium": 5.46,
-      "diesel": null,
+      "regular": 4.99,
+      "midgrade": 5.19,
+      "premium": 5.39,
+      "diesel": 5.59,
       "e85": null
     }
   },
@@ -296,11 +296,11 @@
       "longitude": -117.9084
     },
     "prices": {
-      "regular": 5.47,
-      "midgrade": 5.67,
-      "premium": 5.87,
-      "diesel": 6.07,
-      "e85": 4.97
+      "regular": 5.33,
+      "midgrade": 5.53,
+      "premium": 5.73,
+      "diesel": 5.93,
+      "e85": null
     }
   },
   "OC-17": {
@@ -315,11 +315,11 @@
       "longitude": -117.909
     },
     "prices": {
-      "regular": 5.49,
-      "midgrade": 5.69,
-      "premium": 5.89,
-      "diesel": null,
-      "e85": 4.99
+      "regular": 5.37,
+      "midgrade": 5.57,
+      "premium": 5.77,
+      "diesel": 5.97,
+      "e85": null
     }
   },
   "OC-18": {
@@ -334,11 +334,11 @@
       "longitude": -117.9158
     },
     "prices": {
-      "regular": 5.08,
-      "midgrade": 5.28,
-      "premium": 5.48,
-      "diesel": 5.68,
-      "e85": 4.58
+      "regular": 4.99,
+      "midgrade": 5.19,
+      "premium": 5.39,
+      "diesel": 5.59,
+      "e85": null
     }
   },
   "OC-19": {
@@ -353,11 +353,11 @@
       "longitude": -117.8888
     },
     "prices": {
-      "regular": 5.45,
-      "midgrade": 5.65,
-      "premium": 5.85,
-      "diesel": 6.05,
-      "e85": 4.95
+      "regular": 5.26,
+      "midgrade": 5.46,
+      "premium": 5.66,
+      "diesel": 5.86,
+      "e85": null
     }
   },
   "OC-20": {
@@ -372,10 +372,10 @@
       "longitude": -117.9116
     },
     "prices": {
-      "regular": 5.27,
-      "midgrade": 5.47,
-      "premium": 5.67,
-      "diesel": 5.87,
+      "regular": 5.16,
+      "midgrade": 5.36,
+      "premium": 5.56,
+      "diesel": 5.76,
       "e85": null
     }
   },
@@ -391,10 +391,10 @@
       "longitude": -117.929
     },
     "prices": {
-      "regular": 5.07,
-      "midgrade": 5.27,
-      "premium": 5.47,
-      "diesel": 5.67,
+      "regular": 4.91,
+      "midgrade": 5.11,
+      "premium": 5.31,
+      "diesel": 5.51,
       "e85": null
     }
   },
@@ -410,11 +410,11 @@
       "longitude": -117.8829
     },
     "prices": {
-      "regular": 5.5,
-      "midgrade": 5.7,
-      "premium": 5.9,
-      "diesel": null,
-      "e85": 5.0
+      "regular": 5.33,
+      "midgrade": 5.53,
+      "premium": 5.73,
+      "diesel": 5.93,
+      "e85": null
     }
   },
   "OC-23": {
@@ -429,11 +429,11 @@
       "longitude": -117.8814
     },
     "prices": {
-      "regular": 5.49,
-      "midgrade": 5.69,
-      "premium": 5.89,
-      "diesel": 6.09,
-      "e85": 4.99
+      "regular": 5.35,
+      "midgrade": 5.55,
+      "premium": 5.75,
+      "diesel": 5.95,
+      "e85": null
     }
   },
   "OC-24": {
@@ -448,10 +448,10 @@
       "longitude": -117.909
     },
     "prices": {
-      "regular": 5.08,
-      "midgrade": 5.28,
-      "premium": 5.48,
-      "diesel": 5.68,
+      "regular": 4.99,
+      "midgrade": 5.19,
+      "premium": 5.39,
+      "diesel": 5.59,
       "e85": null
     }
   },
@@ -467,10 +467,10 @@
       "longitude": -117.9077
     },
     "prices": {
-      "regular": 5.5,
-      "midgrade": 5.7,
-      "premium": 5.9,
-      "diesel": 6.1,
+      "regular": 5.34,
+      "midgrade": 5.54,
+      "premium": 5.74,
+      "diesel": 5.94,
       "e85": null
     }
   },
@@ -486,11 +486,11 @@
       "longitude": -117.9086
     },
     "prices": {
-      "regular": 5.26,
-      "midgrade": 5.46,
-      "premium": 5.66,
-      "diesel": 5.86,
-      "e85": null
+      "regular": 5.16,
+      "midgrade": 5.36,
+      "premium": 5.56,
+      "diesel": 5.76,
+      "e85": 4.66
     }
   },
   "OC-27": {
@@ -505,10 +505,10 @@
       "longitude": -117.886
     },
     "prices": {
-      "regular": 5.07,
-      "midgrade": 5.27,
-      "premium": 5.47,
-      "diesel": null,
+      "regular": 4.97,
+      "midgrade": 5.17,
+      "premium": 5.37,
+      "diesel": 5.57,
       "e85": null
     }
   },
@@ -524,11 +524,11 @@
       "longitude": -117.8719
     },
     "prices": {
-      "regular": 4.95,
-      "midgrade": 5.15,
-      "premium": 5.35,
-      "diesel": 5.55,
-      "e85": 4.45
+      "regular": 4.88,
+      "midgrade": 5.08,
+      "premium": 5.28,
+      "diesel": 5.48,
+      "e85": null
     }
   },
   "OC-29": {
@@ -543,10 +543,10 @@
       "longitude": -117.8839
     },
     "prices": {
-      "regular": 5.1,
-      "midgrade": 5.3,
-      "premium": 5.5,
-      "diesel": 5.7,
+      "regular": 4.94,
+      "midgrade": 5.14,
+      "premium": 5.34,
+      "diesel": 5.54,
       "e85": null
     }
   },
@@ -562,11 +562,11 @@
       "longitude": -117.905
     },
     "prices": {
-      "regular": 5.29,
-      "midgrade": 5.49,
-      "premium": 5.69,
-      "diesel": null,
-      "e85": 4.79
+      "regular": 5.19,
+      "midgrade": 5.39,
+      "premium": 5.59,
+      "diesel": 5.79,
+      "e85": null
     }
   },
   "OC-31": {
@@ -581,11 +581,11 @@
       "longitude": -117.9195
     },
     "prices": {
-      "regular": 4.93,
-      "midgrade": 5.13,
-      "premium": 5.33,
+      "regular": 4.81,
+      "midgrade": 5.01,
+      "premium": 5.21,
       "diesel": null,
-      "e85": 4.43
+      "e85": null
     }
   },
   "OC-32": {
@@ -600,11 +600,11 @@
       "longitude": -117.8717
     },
     "prices": {
-      "regular": 5.01,
-      "midgrade": 5.21,
-      "premium": 5.41,
-      "diesel": 5.61,
-      "e85": 4.51
+      "regular": 4.87,
+      "midgrade": 5.07,
+      "premium": 5.27,
+      "diesel": null,
+      "e85": null
     }
   },
   "OC-33": {
@@ -619,10 +619,10 @@
       "longitude": -117.9351
     },
     "prices": {
-      "regular": 4.88,
-      "midgrade": 5.08,
-      "premium": 5.28,
-      "diesel": 5.48,
+      "regular": 4.77,
+      "midgrade": 4.97,
+      "premium": 5.17,
+      "diesel": 5.37,
       "e85": null
     }
   },
@@ -638,11 +638,11 @@
       "longitude": -117.8726
     },
     "prices": {
-      "regular": 5.48,
-      "midgrade": 5.68,
-      "premium": 5.88,
-      "diesel": null,
-      "e85": 4.98
+      "regular": 5.4,
+      "midgrade": 5.6,
+      "premium": 5.8,
+      "diesel": 6.0,
+      "e85": null
     }
   },
   "OC-35": {
@@ -657,11 +657,11 @@
       "longitude": -117.8961
     },
     "prices": {
-      "regular": 5.44,
-      "midgrade": 5.64,
-      "premium": 5.84,
-      "diesel": 6.04,
-      "e85": null
+      "regular": 5.32,
+      "midgrade": 5.52,
+      "premium": 5.72,
+      "diesel": null,
+      "e85": 4.82
     }
   },
   "OC-36": {
@@ -676,10 +676,10 @@
       "longitude": -117.8806
     },
     "prices": {
-      "regular": 5.42,
-      "midgrade": 5.62,
-      "premium": 5.82,
-      "diesel": null,
+      "regular": 5.38,
+      "midgrade": 5.58,
+      "premium": 5.78,
+      "diesel": 5.98,
       "e85": null
     }
   },
@@ -695,9 +695,9 @@
       "longitude": -117.8687
     },
     "prices": {
-      "regular": 5.48,
-      "midgrade": 5.68,
-      "premium": 5.88,
+      "regular": 5.36,
+      "midgrade": 5.56,
+      "premium": 5.76,
       "diesel": null,
       "e85": null
     }
@@ -714,10 +714,10 @@
       "longitude": -117.9287
     },
     "prices": {
-      "regular": 5.04,
-      "midgrade": 5.24,
-      "premium": 5.44,
-      "diesel": 5.64,
+      "regular": 4.91,
+      "midgrade": 5.11,
+      "premium": 5.31,
+      "diesel": 5.51,
       "e85": null
     }
   },
@@ -733,10 +733,10 @@
       "longitude": -117.8814
     },
     "prices": {
-      "regular": 5.45,
-      "midgrade": 5.65,
-      "premium": 5.85,
-      "diesel": 6.05,
+      "regular": 5.31,
+      "midgrade": 5.51,
+      "premium": 5.71,
+      "diesel": 5.91,
       "e85": null
     }
   },
@@ -752,10 +752,10 @@
       "longitude": -117.8986
     },
     "prices": {
-      "regular": 5.5,
-      "midgrade": 5.7,
-      "premium": 5.9,
-      "diesel": 6.1,
+      "regular": 5.33,
+      "midgrade": 5.53,
+      "premium": 5.73,
+      "diesel": null,
       "e85": null
     }
   },
@@ -771,10 +771,10 @@
       "longitude": -117.8805
     },
     "prices": {
-      "regular": 4.93,
-      "midgrade": 5.13,
-      "premium": 5.33,
-      "diesel": 5.53,
+      "regular": 4.88,
+      "midgrade": 5.08,
+      "premium": 5.28,
+      "diesel": 5.48,
       "e85": null
     }
   },
@@ -790,11 +790,11 @@
       "longitude": -117.8839
     },
     "prices": {
-      "regular": 5.04,
-      "midgrade": 5.24,
-      "premium": 5.44,
-      "diesel": null,
-      "e85": 4.54
+      "regular": 4.94,
+      "midgrade": 5.14,
+      "premium": 5.34,
+      "diesel": 5.54,
+      "e85": null
     }
   },
   "OC-43": {
@@ -809,11 +809,11 @@
       "longitude": -117.9273
     },
     "prices": {
-      "regular": 4.99,
-      "midgrade": 5.19,
-      "premium": 5.39,
-      "diesel": 5.59,
-      "e85": 4.49
+      "regular": 4.88,
+      "midgrade": 5.08,
+      "premium": 5.28,
+      "diesel": null,
+      "e85": 4.38
     }
   }
 }

@@ -204,7 +204,7 @@ class MapboxGasStationService:
             'access_token': self.access_token,
             'geometries': 'geojson',
             'overview': 'full',
-            'steps': 'true'
+            'steps': 'true',
         }
         
         try:
