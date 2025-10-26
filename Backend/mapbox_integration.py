@@ -175,10 +175,10 @@ class MapboxGasStationService:
         """
         # For now, return mock prices - in production, integrate with fuel price APIs
         return {
-            'E85': 2.89,
-            '87': 3.45,
-            '89': 3.65,
-            '91': 3.85
+            "e85": 2.89,
+            "regular": 3.45,
+            "midgrade": 3.65,
+            "premium": 3.85
         }
     
     def get_directions(self, origin: Tuple[float, float], destination: Tuple[float, float], 
