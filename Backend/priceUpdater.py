@@ -4,10 +4,9 @@ Web-based Gas Station Finder using Flask
 This version provides a web GUI that works without tkinter
 """
 
-from flask import Flask, render_template, request, jsonify
-import requests
-from geopy.geocoders import Nominatim
-from geopy.distance import geodesic
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from haversine import haversine, Unit
 import json
 import random
 from typing import List, Dict
@@ -21,6 +20,8 @@ from mapbox_integration import MapboxGasStationService
 load_dotenv()
 
 app = Flask(__name__)
+# Enable CORS for all routes, allowing the frontend to communicate with the backend
+CORS(app)
 
 # --- Data Generation Logic (from Gas Stations.py) ---
 
@@ -174,24 +175,10 @@ class GasStationFinderWeb:
         except Exception as e:
             print(f"❌ An unexpected error occurred while loading '{filepath}': {e}")
             return []
-    
-    def get_user_location(self, address: str) -> tuple:
-        """Get user's coordinates from address input"""
-        try:
-            geolocator = Nominatim(user_agent="gas_station_finder")
-            location = geolocator.geocode(address)
-            
-            if location:
-                return location.latitude, location.longitude, location.address
-            else:
-                return None, None, "Address not found"
-                
-        except Exception as e:
-            return None, None, f"Error: {str(e)}"
-    
+
     def calculate_distance(self, lat1: float, lon1: float, lat2: float, lon2: float) -> float:
         """Calculate distance between two points in miles"""
-        return geodesic((lat1, lon1), (lat2, lon2)).miles
+        return haversine((lat1, lon1), (lat2, lon2), unit=Unit.MILES)
     
     def search_gas_stations(self, user_lat: float, user_lon: float, sort_by: str = "closest", 
                           gas_type: str = "all", brand: str = "all", radius: float = 10.0) -> List[Dict]:
@@ -212,7 +199,7 @@ class GasStationFinderWeb:
             # Calculate distance
             distance = self.calculate_distance(
                 user_lat, user_lon, station["lat"], station["lon"])
-            station["distance"] = round(distance, 2)
+            station["distance_miles"] = round(distance, 2)
             
             # Estimate travel time assuming an average speed of 30 mph
             # (distance / speed) * 60 minutes/hour
@@ -225,16 +212,34 @@ class GasStationFinderWeb:
         for station in stations_to_process: # Use the list that has distance/duration data
 
             # Apply radius filter
-            if station.get('distance', float('inf')) > radius:
+            if station.get('distance_miles', float('inf')) > radius:
                 continue
 
             # Apply brand filter
             if brand != "all" and station.get("brand", "").lower() != brand.lower():
                 continue
             # Apply gas type filter
-            if gas_type != "all" and gas_type not in station.get("prices", {}):
-                continue
+            if gas_type != "all":
+                # Make the check case-insensitive by comparing lowercase keys
+                station_price_keys = [k.lower() for k in station.get("prices", {}).keys()]
+                if gas_type.lower() not in station_price_keys:
+                    continue
             results.append(station)
+
+        # 3. Sort the filtered results
+        if sort_by == 'closest':
+            # Sort by the 'distance_miles' key, from smallest to largest
+            results.sort(key=lambda s: s.get('distance_miles', float('inf')))
+        elif sort_by == 'cheapest':
+            # Determine which price to sort by. Default to '87' if 'all' is selected.
+            price_key_to_sort = gas_type if gas_type != 'all' else '87'
+            
+            # Sort by the selected gas price, from cheapest to most expensive.
+            # Stations without a price for the selected type are pushed to the end.
+            results.sort(key=lambda s: s.get('prices', {}).get(price_key_to_sort, float('inf')))
+        
+        # The 'optimal' sort is not implemented, so no action is taken for it.
+
 
         return results
 
@@ -243,38 +248,11 @@ finder = GasStationFinderWeb()
 
 @app.route('/')
 def index():
-    # Pass the list of available brands to the template
-    return render_template('index.html', 
-                           mapbox_token=finder.mapbox_access_token, 
-                           brands=finder.available_brands)
-
-@app.route('/geocode', methods=['POST'])
-def geocode():
-    # ========================================
-    # HOOK: LOCATION SEARCH FIELD PROCESSING
-    # ========================================
-    # This endpoint handles the address input from the search field
-    # Input: JSON with 'address' field from the frontend
-    # Output: Latitude/longitude coordinates for the entered address
-    # Integration point: Connect to real geocoding services here
-    
-    data = request.get_json()
-    address = data.get('address', '')
-    
-    lat, lon, message = finder.get_user_location(address)
-    
-    if lat and lon:
-        return jsonify({
-            'success': True,
-            'lat': lat,
-            'lon': lon,
-            'address': message
-        })
-    else:
-        return jsonify({
-            'success': False,
-            'message': message
-        })
+    """API root. Returns a status message."""
+    return jsonify({
+        "status": "ok",
+        "message": "Gas Station Finder API is running."
+    })
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -475,7 +453,7 @@ if __name__ == '__main__':
     print("🛑 Press Ctrl+C to stop the server")
     
     try:
-        app.run(debug=True, host='0.0.0.0', port=selected_port, use_reloader=False)
+        app.run(debug=True, host='127.0.0.1', port=selected_port, use_reloader=False)
     except KeyboardInterrupt:
         print("\n🛑 Server stopped by user")
     except Exception as e:

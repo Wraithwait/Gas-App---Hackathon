@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Dashboard from "./pages/Dashboard";
+import Landing from "./pages/landing.jsx";
+import Dashboard from "./pages/dashboard.jsx";
 
 export default function App() {
   return (
