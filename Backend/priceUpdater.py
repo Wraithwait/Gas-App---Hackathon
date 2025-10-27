@@ -4,9 +4,11 @@ Web-based Gas Station Finder using Flask
 This version provides a web GUI that works without tkinter
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
-from haversine import haversine, Unit
+import requests
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
 import json
 import random
 from typing import List, Dict
@@ -175,10 +177,24 @@ class GasStationFinderWeb:
         except Exception as e:
             print(f"❌ An unexpected error occurred while loading '{filepath}': {e}")
             return []
-
+    
+    def get_user_location(self, address: str) -> tuple:
+        """Get user's coordinates from address input"""
+        try:
+            geolocator = Nominatim(user_agent="gas_station_finder")
+            location = geolocator.geocode(address)
+            
+            if location:
+                return location.latitude, location.longitude, location.address
+            else:
+                return None, None, "Address not found"
+                
+        except Exception as e:
+            return None, None, f"Error: {str(e)}"
+    
     def calculate_distance(self, lat1: float, lon1: float, lat2: float, lon2: float) -> float:
         """Calculate distance between two points in miles"""
-        return haversine((lat1, lon1), (lat2, lon2), unit=Unit.MILES)
+        return geodesic((lat1, lon1), (lat2, lon2)).miles
     
     def search_gas_stations(self, user_lat: float, user_lon: float, sort_by: str = "closest", 
                           gas_type: str = "all", brand: str = "all", radius: float = 10.0) -> List[Dict]:
@@ -253,6 +269,34 @@ def index():
         "status": "ok",
         "message": "Gas Station Finder API is running."
     })
+
+@app.route('/geocode', methods=['POST'])
+def geocode():
+    # ========================================
+    # HOOK: LOCATION SEARCH FIELD PROCESSING
+    # ========================================
+    # This endpoint handles the address input from the search field
+    # Input: JSON with 'address' field from the frontend
+    # Output: Latitude/longitude coordinates for the entered address
+    # Integration point: Connect to real geocoding services here
+    
+    data = request.get_json()
+    address = data.get('address', '')
+    
+    lat, lon, message = finder.get_user_location(address)
+    
+    if lat and lon:
+        return jsonify({
+            'success': True,
+            'lat': lat,
+            'lon': lon,
+            'address': message
+        })
+    else:
+        return jsonify({
+            'success': False,
+            'message': message
+        })
 
 @app.route('/search', methods=['POST'])
 def search():
